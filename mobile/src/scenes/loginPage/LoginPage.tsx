@@ -20,7 +20,7 @@ const LoginPage = () => {
    const [password, onChangePassword] = React.useState('');
 
    const onCheckAccount = () => {
-      const userNameDefault = 'sondeptrai';
+      const userNameDefault = 'nghiamoideptrai';
       const passwordDefault = '123';
       if (userName === userNameDefault && password === passwordDefault) {
          navigation.navigate('Home' as never);

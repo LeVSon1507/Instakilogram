@@ -1,5 +1,5 @@
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt"; // encryption pass and protect
+import jwt from "jsonwebtoken"; // auth about web token 
 import User from "../models/User.js";
 
 /* REGISTER USER */
