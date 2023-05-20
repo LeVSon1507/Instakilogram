@@ -14,7 +14,7 @@ export const Color = {
   Yellow: '#F7C245',
   Green: '#75A98E',
   Orange: '#F29D41',
-  White: '#ffffff',
+  White: '#f5f5f5',
   Background: '#1B1D31',
   CardBackground: '#262745',
   FilterBackground: '#33345F',
