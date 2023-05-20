@@ -126,9 +126,12 @@ const RegisterPage = () => {
                value={values.occupation}
                onChangeText={text => handleChange('occupation', text)}
             />
-            <Button title='Choose Image' onPress={pickImage} style={{ paddingVertical: 30 }} />
+            <Button title='Choose Image' onPress={pickImage} style={{ marginVertical: 30 }} />
             {values.picture && (
-               <Image source={{ uri: values.picture.uri }} style={{ width: 200, height: 200 }} />
+               <Image
+                  source={{ uri: values.picture.uri }}
+                  style={{ width: 200, height: 200, marginVertical: 10, borderRadius: 50 }}
+               />
             )}
             <TouchableOpacity style={styles.regiterBtn} onPress={() => handleSubmit()}>
                <Text style={{ color: Color.Black }} title='Register'>

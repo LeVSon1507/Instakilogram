@@ -55,7 +55,7 @@ export const styles = StyleSheet.create({
       borderColor: Color.Orange,
       borderWidth: 1,
       borderRadius: 10,
-      paddingTop: 30,
+      paddingVertical: 30,
    },
    containerRP: {
       flex: 1,
