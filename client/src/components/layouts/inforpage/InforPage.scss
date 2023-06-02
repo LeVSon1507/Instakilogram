@@ -1,0 +1,62 @@
+.infor-container {
+  .infor-items {
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 350px;
+    position: fixed;
+    .avatar {
+      padding: 10px 0px;
+      display: flex;
+      align-items: center;
+      button {
+        div {
+          padding: 7px;
+          font-size: 15px;
+        }
+      }
+      .text-account {
+        p {
+          color: white;
+          font-size: 13px;
+        }
+        p:nth-child(2) {
+          color: gainsboro;
+        }
+      }
+    }
+    .addfriend-container {
+      div:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        p:nth-child(1) {
+          color: gainsboro;
+          font-size: 13px;
+        }
+        p {
+          color: white;
+          font-size: 12px;
+        }
+      }
+      .addfriend-box {
+        display: flex;
+        justify-content: space-between;
+
+        div {
+          display: block;
+          padding: 5px;
+          p:nth-child(2) {
+            color: gray;
+          }
+        }
+        p {
+          color: rgb(76, 76, 171);
+          font-size: 12px;
+          cursor: pointer;
+        }
+      }
+      .addfriend-box:nth-child(2) {
+        margin-top: 20px;
+      }
+    }
+  }
+}

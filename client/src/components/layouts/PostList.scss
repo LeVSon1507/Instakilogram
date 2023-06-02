@@ -1,0 +1,126 @@
+.postlist-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  .post-card:nth-child(1) {
+    margin-top: 50px;
+  }
+  .post-card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 450px;
+    background: black;
+    border-radius: 10px;
+    border: 1px solid #2c2c2c;
+    .setcomment {
+      color: rgb(112, 106, 106);
+      padding-left: 15px;
+    }
+    .setcomment:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .MuiCardHeader-root {
+      .MuiCardHeader-content {
+        span {
+          color: white;
+        }
+      }
+      .MuiCardHeader-action {
+        padding-right: 10px;
+        cursor: pointer;
+        svg {
+          color: white;
+          font-size: 20px;
+        }
+      }
+    }
+    .box-comment {
+      display: flex;
+      align-items: center;
+      svg {
+        padding-left: 10px;
+        color: white;
+        font-size: 35px;
+      }
+      button {
+        color: white;
+        svg {
+          font-size: 23px;
+        }
+      }
+      button:disabled {
+        color: rgb(180, 177, 177);
+        svg {
+          font-size: 20px;
+        }
+      }
+    }
+    .MuiCardContent-root {
+      p {
+        color: white;
+      }
+    }
+    .likecomment {
+      div {
+        svg:nth-child(1) {
+          font-size: 26px;
+        }
+        .like-icon {
+          fill: rgb(255, 48, 64);
+        }
+        svg {
+          color: white;
+          font-size: 23px;
+          cursor: pointer;
+        }
+        display: flex;
+        gap: 25px;
+      }
+    }
+    .comment {
+      display: flex;
+      color: rgb(169, 164, 164);
+      padding-left: 25px;
+      align-items: center;
+      margin-bottom: 10px;
+      div {
+        img {
+          max-width: 30px;
+          max-height: 30px;
+          border-radius: 50%;
+        }
+      }
+      span {
+        padding-left: 10px;
+      }
+      p {
+        padding-left: 10px;
+      }
+    }
+    .MuiTextField-root {
+      width: 100%;
+      .MuiInputBase-root {
+        input {
+          border-radius: none;
+          border-end-end-radius: 12px;
+          color: white;
+          padding: 10px 10px;
+        }
+        .MuiOutlinedInput-notchedOutline {
+          border-color: transparent;
+          border-width: 0px;
+        }
+      }
+      .MuiInputBase-root:hover {
+        border-radius: 0px;
+        border-end-end-radius: 12px;
+      }
+    }
+    .MuiCardMedia-root {
+      //   height: auto;
+    }
+  }
+}

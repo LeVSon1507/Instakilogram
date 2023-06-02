@@ -1,0 +1,12 @@
+.post-dialog {
+  .MuiPaper-root {
+    height: 600px;
+    .MuiDialogTitle-root {
+      p {
+        color: black;
+        font-weight: 600;
+        font-size: 22px;
+      }
+    }
+  }
+}

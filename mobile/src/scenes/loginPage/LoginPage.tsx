@@ -1,5 +1,4 @@
 import {
-   StyleSheet,
    Text,
    View,
    TextInput,
@@ -13,6 +12,7 @@ import React from 'react';
 import { Color } from '../../database/Database';
 import { useNavigation } from '@react-navigation/native';
 import { isEmpty } from 'lodash';
+import { styles } from './AuthStyles';
 
 const LoginPage = () => {
    const navigation = useNavigation();
@@ -36,7 +36,7 @@ const LoginPage = () => {
       }
    };
    return (
-      <SafeAreaView style={{ backgroundColor: Color.Green, flex: 1 }}>
+      <SafeAreaView style={{ backgroundColor: Color.White, flex: 1, paddingTop: '20%' }}>
          <ScrollView>
             <View style={styles.logo}>
                <Image style={styles.tinyLogo} source={require('../../../assets/img/logo.png')} />
@@ -63,7 +63,7 @@ const LoginPage = () => {
             </View>
             <View style={{ alignItems: 'center', marginTop: 30 }}>
                <TouchableOpacity style={styles.loginBtn} onPress={() => onCheckAccount()}>
-                  <Text style={{ color: Color.Black }}>Đăng Nhập</Text>
+                  <Text style={{ color: Color.Black }}>Login</Text>
                </TouchableOpacity>
             </View>
             <Text
@@ -71,68 +71,42 @@ const LoginPage = () => {
                   color: Color.Orange,
                   fontSize: 25,
                   textAlign: 'center',
-                  marginVertical: 30,
+                  marginVertical: 15,
                }}
             >
                Welcome to Instakilogram!
             </Text>
+
             <Text
                style={{
                   color: Color.Orange,
                   fontSize: 16,
                   textAlign: 'center',
+                  paddingBottom: 10,
                }}
             >
-               No. 1 social media in Asia
+               Do not have an account?
             </Text>
+            <TouchableOpacity
+               style={{
+                  justifyContent: 'center',
+                  alignItems: 'center',
+               }}
+               onPress={() => navigation.navigate('Register' as never)}
+            >
+               <Text
+                  style={{
+                     color: Color.YellowDisable,
+                     fontSize: 20,
+                     textAlign: 'center',
+                  }}
+               >
+                  Please register
+               </Text>
+            </TouchableOpacity>
          </ScrollView>
       </SafeAreaView>
    );
 };
-const styles = StyleSheet.create({
-   input: {
-      height: 50,
-      margin: 12,
-      borderWidth: 2,
-      borderColor: Color.Orange,
-      padding: 10,
-      borderRadius: 10,
-   },
-   inputFocus: {
-      height: 50,
-      margin: 12,
-      borderWidth: 2,
-      borderColor: Color.Orange,
-      padding: 10,
-      borderRadius: 10,
-      backgroundColor: Color.White,
-   },
-   title: {
-      color: Color.OveralRateBackground,
-      fontSize: 40,
-      textAlign: 'center',
-      justifyContent: 'center',
-      marginVertical: 20,
-   },
-   tinyLogo: {
-      width: 200,
-      height: 200,
-      borderRadius: 50,
-   },
-   logo: {
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop: 10,
-   },
-   loginBtn: {
-      backgroundColor: Color.Yellow,
-      height: 50,
-      width: 100,
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderColor: Color.Orange,
-      borderWidth: 1,
-      borderRadius: 10,
-   },
-});
+
 export default LoginPage;
