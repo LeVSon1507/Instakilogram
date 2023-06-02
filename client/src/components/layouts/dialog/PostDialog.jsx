@@ -50,8 +50,8 @@ const PostDialog = ({ open, handleClose }) => {
       .get(`http://localhost:8080/posts`)
       .then((res) => {
         const sortedPosts = res.data.sort((a, b) => {
-          const dateA = new Date(a.userPostItems[0].createdAt);
-          const dateB = new Date(b.userPostItems[0].createdAt);
+          const dateA = new Date(a.createdAt);
+          const dateB = new Date(b.createdAt);
           return dateB - dateA;
         });
         postItemStore.setPostItem(sortedPosts);
