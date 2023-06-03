@@ -38,7 +38,7 @@ const SideBar = observer(() => {
       <div className="sidebar-container">
         <div className="sidebar-items">
           <div>
-            <Link to="/home">Instagram</Link>
+            <Link to="/home">Instakilogram</Link>
           </div>
           <div>
             <AiOutlineHome />
