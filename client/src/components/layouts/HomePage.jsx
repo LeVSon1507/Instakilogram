@@ -21,8 +21,8 @@ const HomePage = observer(() => {
       .get(`http://localhost:8080/posts`)
       .then((res) => {
         const sortedPosts = res.data.sort((a, b) => {
-          const dateA = new Date(a.userPostItems[0].updatedAt);
-          const dateB = new Date(b.userPostItems[0].updatedAt);
+          const dateA = new Date(a.updatedAt);
+          const dateB = new Date(b.updatedAt);
           return dateB - dateA;
         });
         postItemStore.setPostItem(sortedPosts);
@@ -38,7 +38,7 @@ const HomePage = observer(() => {
         .put(`http://localhost:8080/posts/${userId}/like/${postId}`)
         .then(() => {
           const index = postItemStore?.postItem?.findIndex(
-            (post) => post?.userPostItems[0]?._id === postId
+            (post) => post?._id === postId
           );
           if (index >= 0) {
             postItemStore.updateLike(index, userId);
@@ -57,7 +57,7 @@ const HomePage = observer(() => {
         })
         .then(() => {
           const index = postItemStore?.postItem?.findIndex(
-            (post) => post?.userPostItems[0]?._id === postId
+            (post) => post?._id === postId
           );
           if (index >= 0) {
             postItemStore.updateComment(
@@ -76,7 +76,7 @@ const HomePage = observer(() => {
     } else {
       toast.warning("Vui lòng đăng nhập");
       setTimeout(() => {
-        navigate("/");
+        navigate("/login");
       }, 2000);
     }
   };

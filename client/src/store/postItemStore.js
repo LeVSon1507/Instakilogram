@@ -15,7 +15,7 @@ class PostItemStore {
     console.log("postItem", postItem);
   }
   updateLike(index, userId) {
-    const arrayPostItem = this.postItem[index]?.userPostItems[0];
+    const arrayPostItem = this.postItem[index];
     if (this.postItem && arrayPostItem) {
       const arrayPostLike = arrayPostItem.likes;
       if (arrayPostLike.includes(userId)) {
@@ -29,13 +29,15 @@ class PostItemStore {
     }
   }
   updateComment(index, userId, content, instaName, avatar) {
-    const arrayComment = this.postItem[index]?.userPostItems[0].comments;
+    const arrayComment = this.postItem[index]?.comments;
     if (this.postItem && arrayComment) {
       arrayComment.push({
-        userId: userId,
+        userId: {
+          instaName: instaName,
+          avatar: avatar,
+        },
         content: content,
-        instaName: instaName,
-        avatar: avatar,
+        _id: userId,
       });
       this.postItem = [...this.postItem];
     }

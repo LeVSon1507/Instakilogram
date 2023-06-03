@@ -44,68 +44,61 @@ const PostList = ({
         <Card key={index} className="post-card">
           <CardHeader
             avatar={
-              <Avatar
-                alt={post.userPostItems[0].userId.instaName}
-                src={post.userPostItems[0].userId.avatar}
-              />
+              <Avatar alt={post.userId.instaName} src={post.userId.avatar} />
             }
-            title={post.userPostItems[0].userId.instaName}
+            title={post.userId.instaName}
             action={
               <HiDotsHorizontal
                 onClick={() => {
                   setOpenDialog(true);
-                  setPostItem(post.userPostItems[0]);
+                  setPostItem(post);
                 }}
               />
             }
           />
 
           <CardContent>
-            <Typography>{post.userPostItems[0].description}</Typography>
+            <Typography>{post.description}</Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              {post.userPostItems[0].status}
+              {post.status}
             </Typography>
           </CardContent>
           <CardMedia
             component="img"
             height="450"
             width="100"
-            image={post?.userPostItems[0]?.images[0]?.url}
+            image={post?.images[0]?.url}
             title="Post"
           />
           <CardContent className="likecomment">
             <div>
-              {post.userPostItems[0].likes?.includes(userId) ? (
+              {post.likes?.includes(userId) ? (
                 <GiHeartBeats
                   className="like-icon"
-                  onClick={() => handleLike(post.userPostItems[0]?._id)}
+                  onClick={() => handleLike(post?._id)}
                 />
               ) : (
-                <AiOutlineHeart
-                  onClick={() => handleLike(post.userPostItems[0]?._id)}
-                />
+                <AiOutlineHeart onClick={() => handleLike(post?._id)} />
               )}
               <FaRegComment />
             </div>
-            <Typography>
-              {post.userPostItems[0].likes?.length} lượt thích
-            </Typography>
+            <Typography>{post.likes?.length} lượt thích</Typography>
           </CardContent>
           <Typography
             className="setcomment"
-            onClick={handleExpandComment.bind(null, post.userPostItems[0]._id)}
+            onClick={handleExpandComment.bind(null, post._id)}
           >
-            {post.userPostItems[0].comments.length > 0 &&
-              (expandedComments.includes(post.userPostItems[0]._id)
+            {post.comments.length > 0 &&
+              (expandedComments.includes(post._id)
                 ? "Thu nhỏ bình luận"
                 : "Xem tất cả bình luận")}
           </Typography>
           <Collapse
-            in={expandedComments.includes(post.userPostItems[0]._id)}
+            in={expandedComments.includes(post._id)}
             timeout="auto"
             unmountOnExit
           >
-            {post.userPostItems[0].comments.map((comment) => (
+            {post.comments.map((comment) => (
               <div className="comment" key={comment._id}>
                 <Avatar src={comment.userId.avatar} alt={post.instaName} />
                 <span>{comment.userId.instaName}:</span>
@@ -123,7 +116,7 @@ const PostList = ({
               placeholder="Thêm bình luận"
             />
             <Button
-              onClick={() => handleComment(post.userPostItems[0]?._id)}
+              onClick={() => handleComment(post?._id)}
               disabled={content === "" && true}
             >
               <AiOutlineSend />

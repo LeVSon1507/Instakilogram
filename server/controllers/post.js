@@ -69,16 +69,7 @@ const getAllPost = async (req, res) => {
         model: "User",
       },
     ]);
-    const userIds = postItems.map((item) => item.userId);
-    const uniqueUserIds = [...new Set(userIds)];
-    const result = [];
-    for (const userId of uniqueUserIds) {
-      const userPostItems = postItems.filter((item) => item.userId === userId);
-      result.push({
-        userPostItems: userPostItems,
-      });
-    }
-    res.json(result);
+    res.json(postItems);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
