@@ -113,8 +113,3 @@ const HomePage = observer(() => {
 });
 
 export default HomePage;
-
-
-
-
-
