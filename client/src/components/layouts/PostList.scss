@@ -1,0 +1,263 @@
+.postlist-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  .post-card:nth-child(1) {
+    margin-top: 50px;
+  }
+  .create-post {
+    margin: 30px 0px 5px;
+    padding-top: 10px;
+    max-width: 550px;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 1rem 1rem 2.5rem 0 rgba(0, 0, 0, 0.05);
+
+    p {
+      width: 100%;
+      // color: var(--main-color);
+      font-size: 18px;
+      padding: 0px 0px 10px 15px;
+      border-bottom: 1px solid rgb(225, 219, 219);
+    }
+    div {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      padding: 0px 0px 20px 15px;
+      border-bottom: 1px solid rgb(225, 219, 219);
+      span {
+        background: #dfdddb;
+        color: var(--main-color);
+        border-radius: 50%;
+        font-size: 20px;
+        width: 26px;
+        display: flex;
+        justify-content: center;
+        padding: 8px;
+      }
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      input {
+        border: none;
+        padding-left: 15px;
+        // color: rgb(225, 219, 219);
+      }
+      input:focus {
+        outline: none;
+      }
+    }
+    ul {
+      display: flex;
+      padding-inline-start: 5px;
+      li {
+        list-style: none;
+        margin-left: 15px;
+        display: flex;
+        justify-content: flex-start;
+        padding: 2px 10px;
+        align-items: center;
+        color: var(--main-color);
+        background: #dcf0ff;
+        border-radius: 7px;
+        cursor: pointer;
+        svg {
+          font-size: 25px;
+        }
+      }
+      li:nth-child(1) {
+        svg {
+          color: red;
+        }
+      }
+      li:nth-child(3) {
+        svg {
+          background: yellow;
+          color: rgb(123, 175, 193);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  .post-card {
+    margin: 20px 0px;
+    max-width: 550px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 1rem 1rem 2.5rem 0 rgba(0, 0, 0, 0.05);
+    .setcomment {
+      color: rgb(112, 106, 106);
+      padding-left: 15px;
+    }
+    .setcomment:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .MuiCardHeader-root {
+      padding-bottom: 0px;
+      .MuiCardHeader-avatar {
+        .avatar-text {
+          background: #dfdddb;
+          color: var(--main-color);
+          border-radius: 50%;
+          font-size: 15px;
+          display: flex;
+          justify-content: center;
+          padding: 1px;
+        }
+        .MuiAvatar-root {
+          width: 50px;
+          height: 50px;
+        }
+      }
+      .MuiCardHeader-content {
+        display: flex;
+        p {
+          padding-left: 10px;
+        }
+      }
+      .MuiCardHeader-action {
+        padding-right: 10px;
+        cursor: pointer;
+        svg {
+          color: var(--main-color);
+          font-size: 20px;
+        }
+      }
+    }
+
+    .box-comment {
+      display: flex;
+      align-items: center;
+      svg {
+        padding-left: 10px;
+        color: var(--main-color);
+        font-size: 35px;
+      }
+      button {
+        // color: white;
+        svg {
+          font-size: 23px;
+        }
+      }
+      button:disabled {
+        // color: rgb(180, 177, 177);
+        svg {
+          font-size: 20px;
+        }
+      }
+    }
+    .MuiCardContent-root {
+      p {
+        // color: white;
+      }
+    }
+    .likecomment {
+      div {
+        svg:nth-child(1) {
+          font-size: 26px;
+        }
+        .like-icon {
+          fill: rgb(255, 48, 64);
+        }
+        svg {
+          // color: white;
+          font-size: 23px;
+          cursor: pointer;
+        }
+        p:nth-child(4) {
+          cursor: pointer;
+        }
+        display: flex;
+        gap: 15px;
+        p:hover {
+          color: var(--main-color);
+        }
+      }
+    }
+    .comment {
+      display: flex;
+      // color: rgb(169, 164, 164);
+      padding-left: 25px;
+      align-items: center;
+      margin-bottom: 10px;
+      .avatar-text {
+        background: #dfdddb;
+        color: var(--main-color);
+        border-radius: 50%;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+      }
+      div {
+        img {
+          max-width: 30px;
+          max-height: 30px;
+          border-radius: 50%;
+        }
+      }
+      span {
+        padding-left: 10px;
+      }
+      p {
+        padding-left: 10px;
+      }
+    }
+    .MuiTextField-root {
+      width: 100%;
+      .MuiInputBase-root {
+        input {
+          border-radius: none;
+          border-end-end-radius: 12px;
+          // color: white;
+          padding: 10px 10px;
+        }
+        .MuiOutlinedInput-notchedOutline {
+          border-color: transparent;
+          border-width: 0px;
+        }
+      }
+      .MuiInputBase-root:hover {
+        border-radius: 0px;
+        border-end-end-radius: 12px;
+      }
+    }
+    .MuiCardMedia-root {
+      //   height: auto;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .postlist-container {
+    .create-post {
+      max-width: 620px;
+    }
+    .post-card {
+      max-width: 620px;
+      .MuiCardMedia-root {
+        height: 540px;
+      }
+    }
+  }
+}
+@media (min-width: 1900px) {
+  .postlist-container {
+    .create-post {
+      max-width: 690px;
+    }
+    .post-card {
+      max-width: 690px;
+      .MuiCardMedia-root {
+        height: 620px;
+      }
+    }
+  }
+}
