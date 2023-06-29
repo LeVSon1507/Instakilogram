@@ -1,0 +1,60 @@
+.auth-container {
+  background-image: url(../../assets/images/bg-auth.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .box-auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 5;
+    color: var(--color-white);
+    padding: 3;
+    .form {
+      width: 100%;
+      max-width: 300px;
+      display: flex;
+      justify-content: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      .MuiFormControl-root {
+        width: 100%;
+        label {
+          color: #000;
+        }
+        .MuiInputBase-root {
+          background: rgb(232, 240, 254);
+        }
+      }
+    }
+    .submit-button {
+      background-color: #000;
+      margin-top: 5px;
+    }
+    .submit-button:hover {
+      background: var(--main-color);
+    }
+    .forgot-password {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 10px;
+      a {
+        font-size: 16px;
+        color: var(--color-white);
+      }
+      a:hover {
+        color: var(--main-color);
+      }
+    }
+  }
+}
