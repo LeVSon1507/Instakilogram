@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { observable, action, makeObservable } from "mobx";
+=======
+import { observable, action, makeObservable } from 'mobx';
+>>>>>>> origin/update-source-v2
 
 class PostItemStore {
   postItem = null;
@@ -12,7 +16,11 @@ class PostItemStore {
 
   setPostItem(postItem) {
     this.postItem = postItem;
+<<<<<<< HEAD
     console.log("postItem", postItem);
+=======
+    console.log('postItem', postItem);
+>>>>>>> origin/update-source-v2
   }
   updateLike(index, userId) {
     const arrayPostItem = this.postItem[index];
@@ -28,13 +36,21 @@ class PostItemStore {
       this.postItem = [...this.postItem];
     }
   }
+<<<<<<< HEAD
   updateComment(index, userId, content, instaName, avatar) {
+=======
+  updateComment(index, userId, content, instaName, avatar, userName) {
+>>>>>>> origin/update-source-v2
     const arrayComment = this.postItem[index]?.comments;
     if (this.postItem && arrayComment) {
       arrayComment.push({
         userId: {
           instaName: instaName,
           avatar: avatar,
+<<<<<<< HEAD
+=======
+          userName: userName,
+>>>>>>> origin/update-source-v2
         },
         content: content,
         _id: userId,

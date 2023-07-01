@@ -7,8 +7,18 @@
   pointer-events: none;
 }
 body {
+<<<<<<< HEAD
   background: black;
 }
+=======
+  background: #f8f9fa;
+}
+p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+>>>>>>> origin/update-source-v2
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

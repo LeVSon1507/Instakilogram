@@ -3,8 +3,11 @@ const router = express.Router();
 
 const {
   getAllUser,
+<<<<<<< HEAD
   regiterUser,
   loginUser,
+=======
+>>>>>>> origin/update-source-v2
   checkUserLogin,
   addFriends,
   getUserById,
@@ -15,9 +18,12 @@ router.get("/", getAllUser);
 
 router.get("/:userId", getUserById);
 
+<<<<<<< HEAD
 router.post("/register", regiterUser);
 
 router.post("/login", loginUser);
+=======
+>>>>>>> origin/update-source-v2
 
 router.post("/check", checkUserLogin);
 

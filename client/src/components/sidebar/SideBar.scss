@@ -1,6 +1,7 @@
 .sidebar-container {
   height: 100%;
   position: fixed;
+<<<<<<< HEAD
   .sidebar-items {
     div:nth-child(1) {
       padding: 20px 30px 30px;
@@ -22,6 +23,66 @@
       p {
         color: white;
         font-weight: 400;
+=======
+  background: white;
+  .sidebar-items {
+    .logo {
+      padding: 20px 10px !important;
+      display: flex;
+      align-items: center;
+      font-size: 26px;
+      img {
+        max-width: 60px;
+        max-height: 60px;
+      }
+      a {
+        padding-left: 5px;
+        color: var(--main-color);
+      }
+    }
+    div:nth-child(2) {
+      color: var(--main-color);
+      background: #dcf0ff;
+      margin-left: 15px;
+      p {
+        color: var(--main-color);
+      }
+    }
+    div {
+      cursor: pointer;
+      display: flex;
+      padding: 20px 30px;
+      svg {
+        font-size: 20px;
+        padding-right: 15px;
+        // fill: white;
+      }
+      p {
+        // color: white;
+        font-size: 13px;
+        font-weight: 400;
+        color: rgb(81, 80, 80);
+      }
+      a {
+        color: rgb(81, 80, 80);
+        text-decoration: none;
+      }
+    }
+    div:hover {
+      & p,
+      & svg,
+      & a {
+        color: var(--main-color);
+      }
+    }
+  }
+}
+@media (max-width: 1570px) {
+  .sidebar-container {
+    .sidebar-items {
+      div:nth-child(2) {
+        margin: 0px 10px;
+>>>>>>> origin/update-source-v2
       }
     }
   }

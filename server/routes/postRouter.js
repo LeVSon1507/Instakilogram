@@ -9,6 +9,10 @@ const {
   likePost,
   addCommentToPost,
 } = require("../controllers/post");
+<<<<<<< HEAD
+=======
+const { verifyToken } = require("../middleware/auth");
+>>>>>>> origin/update-source-v2
 
 //get post by each user
 router.get("/:userId", getPostByUser);

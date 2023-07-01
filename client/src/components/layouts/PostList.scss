@@ -7,6 +7,7 @@
   .post-card:nth-child(1) {
     margin-top: 50px;
   }
+<<<<<<< HEAD
   .post-card {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -14,6 +15,92 @@
     background: black;
     border-radius: 10px;
     border: 1px solid #2c2c2c;
+=======
+  .create-post {
+    margin: 30px 0px 5px;
+    padding-top: 10px;
+    max-width: 550px;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 1rem 1rem 2.5rem 0 rgba(0, 0, 0, 0.05);
+
+    p {
+      width: 100%;
+      // color: var(--main-color);
+      font-size: 18px;
+      padding: 0px 0px 10px 15px;
+      border-bottom: 1px solid rgb(225, 219, 219);
+    }
+    div {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      padding: 0px 0px 20px 15px;
+      border-bottom: 1px solid rgb(225, 219, 219);
+      span {
+        background: #dfdddb;
+        color: var(--main-color);
+        border-radius: 50%;
+        font-size: 20px;
+        width: 26px;
+        display: flex;
+        justify-content: center;
+        padding: 8px;
+      }
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      input {
+        border: none;
+        padding-left: 15px;
+        // color: rgb(225, 219, 219);
+      }
+      input:focus {
+        outline: none;
+      }
+    }
+    ul {
+      display: flex;
+      padding-inline-start: 5px;
+      li {
+        list-style: none;
+        margin-left: 15px;
+        display: flex;
+        justify-content: flex-start;
+        padding: 2px 10px;
+        align-items: center;
+        color: var(--main-color);
+        background: #dcf0ff;
+        border-radius: 7px;
+        cursor: pointer;
+        svg {
+          font-size: 25px;
+        }
+      }
+      li:nth-child(1) {
+        svg {
+          color: red;
+        }
+      }
+      li:nth-child(3) {
+        svg {
+          background: yellow;
+          color: rgb(123, 175, 193);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  .post-card {
+    margin: 20px 0px;
+    max-width: 550px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 1rem 1rem 2.5rem 0 rgba(0, 0, 0, 0.05);
+>>>>>>> origin/update-source-v2
     .setcomment {
       color: rgb(112, 106, 106);
       padding-left: 15px;
@@ -23,36 +110,79 @@
       text-decoration: underline;
     }
     .MuiCardHeader-root {
+<<<<<<< HEAD
       .MuiCardHeader-content {
         span {
           color: white;
+=======
+      padding-bottom: 0px;
+      .MuiCardHeader-avatar {
+        .avatar-text {
+          background: #dfdddb;
+          color: var(--main-color);
+          border-radius: 50%;
+          font-size: 15px;
+          display: flex;
+          justify-content: center;
+          padding: 1px;
+        }
+        .MuiAvatar-root {
+          width: 50px;
+          height: 50px;
+        }
+      }
+      .MuiCardHeader-content {
+        display: flex;
+        p {
+          padding-left: 10px;
+>>>>>>> origin/update-source-v2
         }
       }
       .MuiCardHeader-action {
         padding-right: 10px;
         cursor: pointer;
         svg {
+<<<<<<< HEAD
           color: white;
+=======
+          color: var(--main-color);
+>>>>>>> origin/update-source-v2
           font-size: 20px;
         }
       }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/update-source-v2
     .box-comment {
       display: flex;
       align-items: center;
       svg {
         padding-left: 10px;
+<<<<<<< HEAD
         color: white;
         font-size: 35px;
       }
       button {
         color: white;
+=======
+        color: var(--main-color);
+        font-size: 35px;
+      }
+      button {
+        // color: white;
+>>>>>>> origin/update-source-v2
         svg {
           font-size: 23px;
         }
       }
       button:disabled {
+<<<<<<< HEAD
         color: rgb(180, 177, 177);
+=======
+        // color: rgb(180, 177, 177);
+>>>>>>> origin/update-source-v2
         svg {
           font-size: 20px;
         }
@@ -60,7 +190,11 @@
     }
     .MuiCardContent-root {
       p {
+<<<<<<< HEAD
         color: white;
+=======
+        // color: white;
+>>>>>>> origin/update-source-v2
       }
     }
     .likecomment {
@@ -72,20 +206,51 @@
           fill: rgb(255, 48, 64);
         }
         svg {
+<<<<<<< HEAD
           color: white;
           font-size: 23px;
           cursor: pointer;
         }
         display: flex;
         gap: 25px;
+=======
+          // color: white;
+          font-size: 23px;
+          cursor: pointer;
+        }
+        p:nth-child(4) {
+          cursor: pointer;
+        }
+        display: flex;
+        gap: 15px;
+        p:hover {
+          color: var(--main-color);
+        }
+>>>>>>> origin/update-source-v2
       }
     }
     .comment {
       display: flex;
+<<<<<<< HEAD
       color: rgb(169, 164, 164);
       padding-left: 25px;
       align-items: center;
       margin-bottom: 10px;
+=======
+      // color: rgb(169, 164, 164);
+      padding-left: 25px;
+      align-items: center;
+      margin-bottom: 10px;
+      .avatar-text {
+        background: #dfdddb;
+        color: var(--main-color);
+        border-radius: 50%;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+      }
+>>>>>>> origin/update-source-v2
       div {
         img {
           max-width: 30px;
@@ -106,7 +271,11 @@
         input {
           border-radius: none;
           border-end-end-radius: 12px;
+<<<<<<< HEAD
           color: white;
+=======
+          // color: white;
+>>>>>>> origin/update-source-v2
           padding: 10px 10px;
         }
         .MuiOutlinedInput-notchedOutline {
@@ -124,3 +293,33 @@
     }
   }
 }
+<<<<<<< HEAD
+=======
+
+@media (min-width: 1600px) {
+  .postlist-container {
+    .create-post {
+      max-width: 620px;
+    }
+    .post-card {
+      max-width: 620px;
+      .MuiCardMedia-root {
+        height: 540px;
+      }
+    }
+  }
+}
+@media (min-width: 1900px) {
+  .postlist-container {
+    .create-post {
+      max-width: 690px;
+    }
+    .post-card {
+      max-width: 690px;
+      .MuiCardMedia-root {
+        height: 620px;
+      }
+    }
+  }
+}
+>>>>>>> origin/update-source-v2

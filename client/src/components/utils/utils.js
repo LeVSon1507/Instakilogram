@@ -1,5 +1,13 @@
 export const formatAccount = (name) => {
+<<<<<<< HEAD
   return name?.slice(0, 1);
+=======
+  const words = name?.split(" ");
+  const firstLetter = words && words.length > 0 ? words[0]?.charAt(0) : "";
+  const lastWord = words && words.length > 0 ? words[words.length - 1] : "";
+  const lastLetter = lastWord?.charAt(0);
+  return `${firstLetter}${lastLetter}`.toUpperCase();
+>>>>>>> origin/update-source-v2
 };
 export const handleImageUpload = (image, setImageUrl) => {
   const data = new FormData();

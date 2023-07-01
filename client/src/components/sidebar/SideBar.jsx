@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import { Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -17,12 +18,39 @@ const SideBar = observer(() => {
   const [openDialog, setOpenDialog] = useState(false);
 
   const accessToken = localStorage.getItem("accessToken");
+=======
+import React, { useEffect, useState } from 'react';
+import { Grid, Typography } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
+import './SideBar.scss';
+import { observer } from 'mobx-react';
+import axios from 'axios';
+import accountStore from '../../store/accountStore';
+import { AiOutlineHome, AiOutlineHeart } from 'react-icons/ai';
+import { BsSearch } from 'react-icons/bs';
+import { RiCompassDiscoverFill } from 'react-icons/ri';
+import { MdOutlineOndemandVideo, MdOutlineAccountCircle } from 'react-icons/md';
+import { SiMessenger } from 'react-icons/si';
+import { IoAddCircleSharp } from 'react-icons/io5';
+import PostDialog from '../layouts/dialog/PostDialog';
+import { logo, logoInsta } from '../utils/constant';
+
+const SideBar = observer(() => {
+  const [openDialog, setOpenDialog] = useState(false);
+  const navigate = useNavigate();
+
+  const accessToken = sessionStorage.getItem('accessToken');
+>>>>>>> origin/update-source-v2
   useEffect(() => {
     const config = {
       headers: { Authorization: `Bearer ${accessToken}` },
     };
     axios
+<<<<<<< HEAD
       .post("http://localhost:8080/users/check", null, {
+=======
+      .post('http://localhost:8080/users/check', null, {
+>>>>>>> origin/update-source-v2
         headers: config.headers,
       })
       .then((res) => {
@@ -30,6 +58,12 @@ const SideBar = observer(() => {
       })
       .catch((error) => {
         console.log(error);
+<<<<<<< HEAD
+=======
+        if (error.response?.status === 401) {
+          navigate('/');
+        }
+>>>>>>> origin/update-source-v2
       });
   }, []);
 
@@ -37,7 +71,12 @@ const SideBar = observer(() => {
     <>
       <div className="sidebar-container">
         <div className="sidebar-items">
+<<<<<<< HEAD
           <div>
+=======
+          <div className="logo">
+            <img src={logoInsta} alt="logo" />
+>>>>>>> origin/update-source-v2
             <Link to="/home">Instakilogram</Link>
           </div>
           <div>
@@ -58,7 +97,13 @@ const SideBar = observer(() => {
           </div>
           <div>
             <SiMessenger />
+<<<<<<< HEAD
             <Typography>Tin Nhắn</Typography>
+=======
+            <Typography>
+              <Link to="/groupchat">Tin Nhắn</Link>
+            </Typography>
+>>>>>>> origin/update-source-v2
           </div>
           <div>
             <AiOutlineHeart />

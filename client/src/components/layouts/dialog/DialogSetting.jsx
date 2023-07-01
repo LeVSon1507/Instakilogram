@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Dialog, DialogContent, DialogContentText, Slide } from "@mui/material";
 import React from "react";
 import "./DialogSetting.scss";
@@ -11,13 +12,40 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 const DialogSetting = observer(({ open, handleClose, postItem, userId }) => {
+=======
+import { Dialog, DialogContent, DialogContentText, Slide } from '@mui/material';
+import React from 'react';
+import './DialogSetting.scss';
+import axios from 'axios';
+import postItemStore from '../../../store/postItemStore';
+import accountStore from '../../../store/accountStore';
+import { observer } from 'mobx-react';
+import { Link, useNavigate } from 'react-router-dom';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return (
+    <Slide
+      direction="down"
+      ref={ref}
+      {...props}
+    />
+  );
+});
+
+const DialogSetting = observer(({ open, handleClose, postItem, userId }) => {
+  const navigate = useNavigate();
+>>>>>>> origin/update-source-v2
   const deletePost = (id) => {
     axios
       .delete(`http://localhost:8080/posts/${userId}/${id}`)
       .then(() => {
         if (userId !== undefined) {
           const index = postItemStore?.postItem?.findIndex(
+<<<<<<< HEAD
             (post) => post?.userPostItems[0]?._id === postItem?._id
+=======
+            (post) => post?._id === postItem?._id
+>>>>>>> origin/update-source-v2
           );
           if (index >= 0) {
             postItemStore.deletePost(index);
@@ -42,12 +70,20 @@ const DialogSetting = observer(({ open, handleClose, postItem, userId }) => {
       .get(`http://localhost:8080/users/${userId}`)
       .then((res) => {
         accountStore.setAccount(res.data);
+<<<<<<< HEAD
         console.log("res.data", res.data);
+=======
+        console.log('res.data', res.data);
+>>>>>>> origin/update-source-v2
       })
       .catch((err) => {
         console.log(err);
       });
   };
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/update-source-v2
   return (
     <Dialog
       open={open}
@@ -68,6 +104,7 @@ const DialogSetting = observer(({ open, handleClose, postItem, userId }) => {
             </DialogContentText>
           </>
         ) : (
+<<<<<<< HEAD
           <DialogContentText onClick={() => addFriends(postItem?.userId?._id)}>
             {accountStore.account?.friends.some(
               (friend) => friend.friendId === postItem?.userId?._id
@@ -75,6 +112,27 @@ const DialogSetting = observer(({ open, handleClose, postItem, userId }) => {
               ? `Bỏ theo dõi`
               : `Theo dõi`}
           </DialogContentText>
+=======
+          <>
+            <DialogContentText
+              onClick={() => addFriends(postItem?.userId?._id)}
+            >
+              {accountStore.account?.friends.some(
+                (friend) => friend.friendId === postItem?.userId?._id
+              )
+                ? `Bỏ theo dõi`
+                : `Theo dõi`}
+            </DialogContentText>
+            <DialogContentText>
+              <Link
+                to={`/groupchat/${postItem?.userId?._id}`}
+                state={postItem}
+              >
+                Nhắn Tin
+              </Link>
+            </DialogContentText>
+          </>
+>>>>>>> origin/update-source-v2
         )}
 
         <DialogContentText>Xem Trang Cá Nhân</DialogContentText>
