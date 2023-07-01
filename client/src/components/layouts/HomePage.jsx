@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-import React, { useEffect, useState } from "react";
-import SideBar from "../sidebar/SideBar";
-import { Grid } from "@mui/material";
-import InforPage from "./inforpage/InforPage";
-import axios from "axios";
-import { observer } from "mobx-react";
-import accountStore from "../../store/accountStore";
-import PostList from "./PostList";
-import "./HomePage.scss";
-import postItemStore from "../../store/postItemStore";
-import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-
-const HomePage = observer(() => {
-  const userId = accountStore?.account?._id;
-  const [content, setContent] = useState("");
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8080/posts`)
-=======
 import React, { useEffect, useState } from 'react';
 import SideBar from '../sidebar/SideBar';
 import { Grid } from '@mui/material';
@@ -46,7 +23,6 @@ const HomePage = observer(() => {
       .get(`http://localhost:8080/posts`,{
         headers: { Authorization: `Bearer ${accessToken}` }
       })
->>>>>>> origin/update-source-v2
       .then((res) => {
         const sortedPosts = res.data.sort((a, b) => {
           const dateA = new Date(a.updatedAt);
@@ -93,31 +69,19 @@ const HomePage = observer(() => {
               userId,
               content,
               accountStore.account?.instaName,
-<<<<<<< HEAD
-              accountStore.account?.avatar
-=======
               accountStore.account?.avatar,
               accountStore.account?.userName
->>>>>>> origin/update-source-v2
             );
           }
         })
         .catch((err) => {
           console.log(err);
         });
-<<<<<<< HEAD
-      setContent("");
-    } else {
-      toast.warning("Vui lòng đăng nhập");
-      setTimeout(() => {
-        navigate("/login");
-=======
       setContent('');
     } else {
       toast.warning('Vui lòng đăng nhập');
       setTimeout(() => {
         navigate('/');
->>>>>>> origin/update-source-v2
       }, 2000);
     }
   };
@@ -125,16 +89,6 @@ const HomePage = observer(() => {
   return (
     <div>
       <ToastContainer />
-<<<<<<< HEAD
-      <Grid container spacing={2} className="home-container">
-        <Grid item md={2} className="sidebar-grid">
-          <SideBar />
-        </Grid>
-        <Grid item md={10} className="inforpost-layout">
-          <Grid container spacing={2}>
-            <Grid item md={7}>
-              <Grid container spacing={2}>
-=======
       <Grid
         container
         spacing={2}
@@ -164,7 +118,6 @@ const HomePage = observer(() => {
                 container
                 spacing={2}
               >
->>>>>>> origin/update-source-v2
                 <PostList
                   postAlls={postItemStore.postItem}
                   handleLike={handleLike}
@@ -175,14 +128,10 @@ const HomePage = observer(() => {
                 />
               </Grid>
             </Grid>
-<<<<<<< HEAD
-            <Grid item md={5}>
-=======
             <Grid
               item
               md={4}
             >
->>>>>>> origin/update-source-v2
               <InforPage />
             </Grid>
           </Grid>

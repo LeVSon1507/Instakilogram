@@ -7,15 +7,6 @@
   .post-card:nth-child(1) {
     margin-top: 50px;
   }
-<<<<<<< HEAD
-  .post-card {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 450px;
-    background: black;
-    border-radius: 10px;
-    border: 1px solid #2c2c2c;
-=======
   .create-post {
     margin: 30px 0px 5px;
     padding-top: 10px;
@@ -100,7 +91,6 @@
     width: 100%;
     border-radius: 10px;
     box-shadow: 1rem 1rem 2.5rem 0 rgba(0, 0, 0, 0.05);
->>>>>>> origin/update-source-v2
     .setcomment {
       color: rgb(112, 106, 106);
       padding-left: 15px;
@@ -110,11 +100,6 @@
       text-decoration: underline;
     }
     .MuiCardHeader-root {
-<<<<<<< HEAD
-      .MuiCardHeader-content {
-        span {
-          color: white;
-=======
       padding-bottom: 0px;
       .MuiCardHeader-avatar {
         .avatar-text {
@@ -135,54 +120,33 @@
         display: flex;
         p {
           padding-left: 10px;
->>>>>>> origin/update-source-v2
         }
       }
       .MuiCardHeader-action {
         padding-right: 10px;
         cursor: pointer;
         svg {
-<<<<<<< HEAD
-          color: white;
-=======
           color: var(--main-color);
->>>>>>> origin/update-source-v2
           font-size: 20px;
         }
       }
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/update-source-v2
     .box-comment {
       display: flex;
       align-items: center;
       svg {
         padding-left: 10px;
-<<<<<<< HEAD
-        color: white;
-        font-size: 35px;
-      }
-      button {
-        color: white;
-=======
         color: var(--main-color);
         font-size: 35px;
       }
       button {
         // color: white;
->>>>>>> origin/update-source-v2
         svg {
           font-size: 23px;
         }
       }
       button:disabled {
-<<<<<<< HEAD
-        color: rgb(180, 177, 177);
-=======
         // color: rgb(180, 177, 177);
->>>>>>> origin/update-source-v2
         svg {
           font-size: 20px;
         }
@@ -190,11 +154,7 @@
     }
     .MuiCardContent-root {
       p {
-<<<<<<< HEAD
-        color: white;
-=======
         // color: white;
->>>>>>> origin/update-source-v2
       }
     }
     .likecomment {
@@ -206,14 +166,6 @@
           fill: rgb(255, 48, 64);
         }
         svg {
-<<<<<<< HEAD
-          color: white;
-          font-size: 23px;
-          cursor: pointer;
-        }
-        display: flex;
-        gap: 25px;
-=======
           // color: white;
           font-size: 23px;
           cursor: pointer;
@@ -226,17 +178,10 @@
         p:hover {
           color: var(--main-color);
         }
->>>>>>> origin/update-source-v2
       }
     }
     .comment {
       display: flex;
-<<<<<<< HEAD
-      color: rgb(169, 164, 164);
-      padding-left: 25px;
-      align-items: center;
-      margin-bottom: 10px;
-=======
       // color: rgb(169, 164, 164);
       padding-left: 25px;
       align-items: center;
@@ -250,7 +195,6 @@
         justify-content: center;
         padding: 0px;
       }
->>>>>>> origin/update-source-v2
       div {
         img {
           max-width: 30px;
@@ -271,11 +215,7 @@
         input {
           border-radius: none;
           border-end-end-radius: 12px;
-<<<<<<< HEAD
-          color: white;
-=======
           // color: white;
->>>>>>> origin/update-source-v2
           padding: 10px 10px;
         }
         .MuiOutlinedInput-notchedOutline {
@@ -293,8 +233,6 @@
     }
   }
 }
-<<<<<<< HEAD
-=======
 
 @media (min-width: 1600px) {
   .postlist-container {
@@ -322,4 +260,3 @@
     }
   }
 }
->>>>>>> origin/update-source-v2

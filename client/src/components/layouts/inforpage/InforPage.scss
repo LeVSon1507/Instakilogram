@@ -8,12 +8,6 @@
       padding: 10px 0px;
       display: flex;
       align-items: center;
-<<<<<<< HEAD
-      button {
-        div {
-          padding: 7px;
-          font-size: 15px;
-=======
 
       button {
         div {
@@ -25,40 +19,19 @@
           font-size: 15px;
           background: #dfdddb;
           color: var(--main-color);
->>>>>>> origin/update-source-v2
         }
       }
       .text-account {
         p {
-<<<<<<< HEAD
-          color: white;
-          font-size: 13px;
-        }
-        p:nth-child(2) {
-          color: gainsboro;
-=======
           // color: white;
           font-size: 13px;
         }
         p:nth-child(2) {
           // color: gainsboro;
->>>>>>> origin/update-source-v2
         }
       }
     }
     .addfriend-container {
-<<<<<<< HEAD
-      div:nth-child(1) {
-        display: flex;
-        justify-content: space-between;
-        p:nth-child(1) {
-          color: gainsboro;
-          font-size: 13px;
-        }
-        p {
-          color: white;
-          font-size: 12px;
-=======
       background: white;
       padding: 20px 10px 5px;
       border-radius: 5px;
@@ -70,26 +43,10 @@
           // color: gainsboro;
           font-size: 13px;
           font-weight: 600;
->>>>>>> origin/update-source-v2
         }
       }
       .addfriend-box {
         display: flex;
-<<<<<<< HEAD
-        justify-content: space-between;
-
-        div {
-          display: block;
-          padding: 5px;
-          p:nth-child(2) {
-            color: gray;
-          }
-        }
-        p {
-          color: rgb(76, 76, 171);
-          font-size: 12px;
-          cursor: pointer;
-=======
         align-items: center;
         width: 100%;
         .avatar {
@@ -126,14 +83,11 @@
           cursor: pointer;
           text-align: right;
           width: 100%;
->>>>>>> origin/update-source-v2
         }
       }
       .addfriend-box:nth-child(2) {
         margin-top: 20px;
       }
-<<<<<<< HEAD
-=======
       button {
         border: none;
         border-radius: 5px;
@@ -143,7 +97,6 @@
         height: 30px;
         margin: 10px 0px;
       }
->>>>>>> origin/update-source-v2
     }
   }
 }
