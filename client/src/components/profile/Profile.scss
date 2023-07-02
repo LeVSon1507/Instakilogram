@@ -1,0 +1,69 @@
+.flex-col {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 13px;
+  justify-content: center;
+  font-size: large;
+  
+}
+.header {
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  font-weight: 500;
+  margin: 10px;
+  color: blueviolet;
+}
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 960px) {
+  .image-list {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image-list {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-list {
+    justify-content: center;
+  }
+}
+.pageProfile {
+  display: grid;
+  grid-template-columns: auto 1fr; // Chia thành hai cột, navbar có kích thước tự động, profile chiếm phần còn lại
+  grid-gap: 16px; // Khoảng cách giữa hai phần
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr; // Khi màn hình có chiều rộng nhỏ hơn 768px, chỉ hiển thị một cột
+  }
+}
+.pageProfile {
+  display: flex;
+  height: 100vh; 
+
+  .template {
+    display: flex;
+  }
+  .navbar {
+    flex-basis: 25%; 
+  }
+  .profile {
+    flex-basis: 70%;
+  }
+}
+

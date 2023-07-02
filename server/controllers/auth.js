@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-import bcrypt from "bcrypt"; // encryption pass and protect
-import jwt from "jsonwebtoken"; // auth about web token 
-import User from "../models/User.js";
-=======
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
->>>>>>> origin/update-source-v2
 
 const regiterUser = async (req, res) => {
     const { instaName, userName, email, password, avatar } = req.body;

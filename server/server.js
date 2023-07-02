@@ -3,12 +3,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-<<<<<<< HEAD
-require('dotenv').config();
-
-const app = express();
-
-=======
 const http = require('http');
 const { Server } = require('socket.io');
 
@@ -16,7 +10,6 @@ const app = express();
 
 const server = http.createServer(app);
 
->>>>>>> origin/update-source-v2
 app.use(cors());
 app.use(bodyParser.json());
 app.use(
@@ -28,15 +21,6 @@ app.use(
   })
 );
 
-<<<<<<< HEAD
-const port = 8080;
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
-
-mongoose.connect(process.env.MONGO_URL, {
-=======
 // {socket.io
 
 const io = new Server(server, {
@@ -93,7 +77,6 @@ server.listen(port, () => {
 });
 
 mongoose.connect('mongodb://127.0.0.1:27017/SocialMedia', {
->>>>>>> origin/update-source-v2
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -105,13 +88,6 @@ db.once('open', function () {
   console.log('Database connected');
 });
 
-<<<<<<< HEAD
-const usersRouter = require('./routes/userRouter');
-const postsRouter = require('./routes/postRouter');
-
-app.use('/users', usersRouter);
-app.use('/posts', postsRouter);
-=======
 const authRouter = require('./routes/authRoutes');
 const usersRouter = require('./routes/userRouter');
 const postsRouter = require('./routes/postRouter');
@@ -123,4 +99,3 @@ app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 app.use('/chats', chatRouter);
 app.use('/messages', messageRouter);
->>>>>>> origin/update-source-v2

@@ -42,7 +42,7 @@ const SideBar = observer(() => {
     <>
       <div className="sidebar-container">
         <div className="sidebar-items">
-          <div className="logo">
+          <div className="logo">  
             <img src={logoInsta} alt="logo" />
             <Link to="/home">Instakilogram</Link>
           </div>

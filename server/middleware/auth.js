@@ -1,20 +1,12 @@
-<<<<<<< HEAD
-import jwt from 'jsonwebtoken';
-=======
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
->>>>>>> origin/update-source-v2
 
 const verifyToken = async (req, res, next) => {
   try {
     let token = req.header('Authorization');
 
     if (!token) {
-<<<<<<< HEAD
-      return res.status(403).send('Access Denied');
-=======
       return res.status(401).send("Invalid access token");
->>>>>>> origin/update-source-v2
     }
 
     if (token.startsWith('Bearer ')) {

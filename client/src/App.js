@@ -3,6 +3,7 @@ import GroupChat from './components/chat/GroupChat';
 import HomePage from './components/layouts/HomePage';
 import AuthPage from './components/login/AuthPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Profile from './components/profile/ProfilePage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/groupchat/:id" element={<GroupChat />} />
         <Route path="/groupchat" element={<GroupChat />} />
+        <Route path="/profile" element={<Profile/>} />
       </Routes>
     </BrowserRouter>
   );
