@@ -1,93 +1,85 @@
-import { Avatar, Box, Grid, Icon, ImageList, ImageListItem } from "@mui/material";
-import './Profile.scss'
+import React, { useState } from "react";
+import { Avatar, Box, Button, ButtonGroup, Grid, TextField } from "@mui/material";
 import SideBar from "../sidebar/SideBar";
-import SettingsIcon from '@mui/icons-material/Settings';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import data from '../../assets/images/dataPost.json'
+import "./Profile.scss";
+import { EditProfile } from "./EditProfile";
+import { SearchFriend } from "./SearchFriend";
+import { UserPoster } from "./UserPoster"
 
 const Profile = () => {
+  const friends = [
+    { id: 1, name: "Friend 1", avatarUrl: "https://example.com/avatar1.jpg" },
+    { id: 2, name: "Friend 2", avatarUrl: "https://example.com/avatar2.jpg" },
+    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
+    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
+    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
+    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
+    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
+    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
+    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
+    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
+    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
+    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
+    // Add more friends...
+  ];
+  const [isEditing, setIsEditing] = useState(false);
+  const [isShowingPost, setIsShowingPost] = useState(false);
+  const [isShowingFriends, setIsShowingFriends] = useState(false);
+  const friendCount = friends.length;
+
+  const handleEditClick = () => {
+    setIsEditing(true);
+    setIsShowingPost(false);
+    setIsShowingFriends(false);
+  };
+
+  const handlePostClick = () => {
+    setIsEditing(false);
+    setIsShowingPost(true);
+    setIsShowingFriends(false);
+  };
+
+  const handleFriendsClick = () => {
+    setIsEditing(false);
+    setIsShowingPost(false);
+    setIsShowingFriends(true);
+  }; 
+
   return (
     <div className="pageProfile">
-      <div className="template">
-        <div className="navbar"
-        >
+      <Grid container>
+        <Grid item xs={2}>
           <SideBar />
-        </div>
-        <div 
-          md={10}
-          className="profile"
-        >
-          <Grid className="flex-content">
-            <Grid
-              className="header"
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 4
-              }}
-            >
+        </Grid>
+        <Grid item xs={10}>
+          <div className="flex-col">
+            <div className="user-profile">
               <Avatar
-                alt="Remy Sharp"
-                src="https://kynguyenlamdep.com/wp-content/uploads/2022/06/avatar-cute-meo-con-than-chet-700x695.jpg"
+                alt="User Avatar"
+                src="https://example.com/user-avatar.jpg"
+                className="user-avatar"
                 sx={{
-                  width: "100%",
-                  height: "auto",
-                  maxWidth: 200,
-                  maxHeight: 200
+                  height: 200,
+                  width: 200
                 }}
               />
-              <Box className="flex-col">
-                <Box className="flex-row">
-                  <h7>0 Post</h7>
-                  <h7>0 Follower</h7>
-                  <h7>0 Following</h7>
-                </Box>
-                <h3>User Name</h3>
-              </Box>
-              <SettingsIcon/>
-              Edit Profile
-            </Grid>
-
-          </Grid>
-          <div className="flex-row">Tin nổi bật</div>
-          <Grid className="flex-row"
-            sx={{
-              justifyContent: "center",
-              marginTop: 2
-            }}
-          >
-            <AddCircleIcon sx={{
-              height: 40,
-              width: 40
-            }}/>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-            <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-          </Grid>
-          <div className="flex-row title">
-            Poster
+              <h3 className="user-name">User Name</h3>
+            </div>
+            <div className="user-bio">Your Bio:</div>
+            <ButtonGroup variant="text" className="profile-buttons">
+              <Button onClick={handleEditClick}>Edit</Button>
+              <Button onClick={handlePostClick}>Post</Button>
+              <Button onClick={handleFriendsClick}>Friends
+                {friendCount > 0 && <span className="friend-count">({friendCount})</span>}</Button>
+            </ButtonGroup>
+            {isEditing && <EditProfile />}
+            {isShowingPost && <UserPoster/>}
+            {isShowingFriends && <SearchFriend />}
           </div>
-          <div className="flex-row" >
-          <ImageList className="image-list" sx={{ width: "100%", height: "100%" }} variant="" cols={4} gap={8} rowHeight="auto">
-            {data.map((item) => (
-              <ImageListItem key={item.img}>
-                <img
-                  src={item.img}
-                  srcSet={item.img}
-                  alt={item.title}
-                  loading="lazy"
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
-
-          </div>
-        </div>
-      </div>
+        </Grid>
+      </Grid>
     </div>
   );
-}
+};
 
 export default Profile;
