@@ -1,69 +1,84 @@
 .flex-col {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  align-items: center;
+  /* Centers items horizontally */
+  justify-content: center;
+  /* Centers items vertically */
+  height: 100%;
+  gap: 10px;
 }
 .flex-row {
   display: flex;
-  flex-direction: row-reverse;
-  gap: 13px;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  font-size: large;
-  
-}
-.header {
   height: 100%;
-  width: 100%;
+}
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.title {
-  font-weight: 500;
-  margin: 10px;
-  color: blueviolet;
+.pageProfile {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
-.image-list {
+
+.form {
+  margin: 10px;
+  padding: 10px;
+}
+.post-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  gap: 2px
 }
 
-@media screen and (max-width: 960px) {
-  .image-list {
-    justify-content: center;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .image-list {
-    justify-content: space-between;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .image-list {
-    justify-content: center;
-  }
-}
-.pageProfile {
-  display: grid;
-  grid-template-columns: auto 1fr; // Chia thành hai cột, navbar có kích thước tự động, profile chiếm phần còn lại
-  grid-gap: 16px; // Khoảng cách giữa hai phần
-
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr; // Khi màn hình có chiều rộng nhỏ hơn 768px, chỉ hiển thị một cột
-  }
-}
-.pageProfile {
+.post {
+  flex-basis: 24%; /* Đảm bảo rằng mỗi phần tử chiếm 25% chiều rộng của container (1/4) */
   display: flex;
-  height: 100vh; 
-
-  .template {
-    display: flex;
-  }
-  .navbar {
-    flex-basis: 25%; 
-  }
-  .profile {
-    flex-basis: 70%;
-  }
+  justify-content: center; /* Canh giữa phần tử con trong phần tử cha */
+  /* Các thuộc tính khác cho phần tử post */
 }
 
+.post img {
+  width: 100%;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+}
+// Profile.scss
+
+.friends-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 30%;
+}
+
+.friend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.friend-avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.friend-name {
+  margin-top: 8px;
+  text-align: center;
+}
+.friend-count {
+  color: red;
+}
