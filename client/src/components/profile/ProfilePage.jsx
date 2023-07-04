@@ -1,84 +1,49 @@
-import React, { useState } from "react";
-import { Avatar, Box, Button, ButtonGroup, Grid, TextField } from "@mui/material";
+import { Button, Card, CardActionArea, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import SideBar from "../sidebar/SideBar";
 import "./Profile.scss";
-import { EditProfile } from "./EditProfile";
-import { SearchFriend } from "./SearchFriend";
-import { UserPoster } from "./UserPoster"
+import { IntroProfile } from "./IntroProfile";
+import RecipeReviewCard from "./PostProfile";
 
 const Profile = () => {
-  const friends = [
-    { id: 1, name: "Friend 1", avatarUrl: "https://example.com/avatar1.jpg" },
-    { id: 2, name: "Friend 2", avatarUrl: "https://example.com/avatar2.jpg" },
-    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
-    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
-    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
-    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
-    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
-    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
-    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
-    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
-    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
-    { id: 3, name: "Friend 3", avatarUrl: "https://example.com/avatar3.jpg" },
-    // Add more friends...
-  ];
-  const [isEditing, setIsEditing] = useState(false);
-  const [isShowingPost, setIsShowingPost] = useState(false);
-  const [isShowingFriends, setIsShowingFriends] = useState(false);
-  const friendCount = friends.length;
-
-  const handleEditClick = () => {
-    setIsEditing(true);
-    setIsShowingPost(false);
-    setIsShowingFriends(false);
-  };
-
-  const handlePostClick = () => {
-    setIsEditing(false);
-    setIsShowingPost(true);
-    setIsShowingFriends(false);
-  };
-
-  const handleFriendsClick = () => {
-    setIsEditing(false);
-    setIsShowingPost(false);
-    setIsShowingFriends(true);
-  }; 
-
   return (
-    <div className="pageProfile">
-      <Grid container>
-        <Grid item xs={2}>
-          <SideBar />
-        </Grid>
-        <Grid item xs={10}>
-          <div className="flex-col">
-            <div className="user-profile">
-              <Avatar
-                alt="User Avatar"
-                src="https://example.com/user-avatar.jpg"
-                className="user-avatar"
-                sx={{
-                  height: 200,
-                  width: 200
-                }}
-              />
-              <h3 className="user-name">User Name</h3>
-            </div>
-            <div className="user-bio">Your Bio:</div>
-            <ButtonGroup variant="text" className="profile-buttons">
-              <Button onClick={handleEditClick}>Edit</Button>
-              <Button onClick={handlePostClick}>Post</Button>
-              <Button onClick={handleFriendsClick}>Friends
-                {friendCount > 0 && <span className="friend-count">({friendCount})</span>}</Button>
-            </ButtonGroup>
-            {isEditing && <EditProfile />}
-            {isShowingPost && <UserPoster/>}
-            {isShowingFriends && <SearchFriend />}
-          </div>
-        </Grid>
+  <div className="profile-container" style={{ overflow: "hidden" }}>
+    <Grid container>
+        <Grid item md={2}
+          sx={{
+            padding: 0,
+            margin:0
+          }}
+        >
+        <SideBar className="slide1" />
       </Grid>
-    </div>
+      <Grid item md={10} className="slide2">
+        <div className="img-container">
+          <img
+            src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2022/05/31110119/USa-visa.jpg"
+            alt=""
+            className="cover-image"
+          />
+          <div className="user">
+            <img
+              src="https://scontent.fdad3-1.fna.fbcdn.net/v/t39.30808-6/340767734_531530315814851_7073978951600084146_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=FvSwnkjuY3kAX81kdhd&_nc_ht=scontent.fdad3-1.fna&oh=00_AfAaDCx_6t0-qdZXUzzrFCe9BwBhx_3g-UH5h-hA5cG-8w&oe=64A7E654"
+              alt=""
+              className="avatar"
+            />
+            <div className="user-name">Nghĩa Đẹp Trai</div>
+          </div>
+        </div>
+        <div className="content-button">
+          <div className="button-list">
+            <Button >Intro</Button>
+            <Button >Post</Button>
+            <Button >Follower</Button>
+            <Button >Following</Button>
+            <Button >Edit</Button>
+          </div>
+        </div>
+      </Grid>
+    </Grid>
+  </div>
   );
 };
 
