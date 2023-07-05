@@ -166,3 +166,73 @@ body {
 .flex>* {
   flex-basis: 20%; // Kích thước ban đầu của mỗi thẻ là 25% (4 thẻ trên mỗi dòng)
 }
+.search {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+.follower {
+  text-align: center;
+  margin: 20px;
+}
+.user-friends {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 30%;
+  // gap: 7px ;
+  align-items: center;
+  // padding: 0 30px;
+  justify-items: start;
+}
+.list-friends {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+    // align-items:center;
+  gap: 30px;
+}
+sup {
+  margin-bottom: 5px;
+  color: red;
+}
+.unfollow {
+  border-radius: 10%;
+  color: red;
+  font-weight: 700;
+}
+.edit {
+  text-align: center;
+  margin: 20px;
+}
+.content-edit {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 20px;
+  border-bottom: 1px solid rgb(25, 107, 57);
+  padding: 10px;
+}
+input {
+  width: 200px;
+  padding: 8px;
+}
+.new-task {
+  display: flex;
+  justify-content: space-between;
+}
+.show-content {
+  height: 100vh;
+}
+.password-actions {
+  display: flex;
+  justify-content: center;
+}
+.userName {
+  display: flex;
+  justify-content: center
+}
+.intro-name {
+  width: 200px;
+}
