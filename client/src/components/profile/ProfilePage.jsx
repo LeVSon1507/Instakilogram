@@ -1,17 +1,44 @@
-import { Button, Card, CardActionArea, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import { Avatar, Button, Card, CardActionArea, CardContent, CardMedia, Grid, Input, TextField, Typography } from "@mui/material";
 import SideBar from "../sidebar/SideBar";
 import "./Profile.scss";
 import { IntroProfile } from "./IntroProfile";
 import RecipeReviewCard from "./PostProfile";
+import { useState } from "react";
+import { FollowingProfile } from "./FollowingProfile";
+import { EditProfile } from "./EditProfile";
+import { FollowerProfile } from "./FollowerProfile";
+
 
 const Profile = () => {
+  const [displayComponent, setDisplayComponent] = useState("intro"); 
+  const handleIntroClick = () => {
+    setDisplayComponent("intro");
+  };
+
+  const handlePostClick = () => {
+    setDisplayComponent("post");
+  };
+
+  const handleFollowerClick = () => {
+    setDisplayComponent("follower");
+  };
+
+  const handleFollowingClick = () => {
+    setDisplayComponent("following");
+  };
+
+  const handleEditClick = () => {
+    setDisplayComponent("edit");
+  };
+
+
   return (
-  <div className="profile-container" style={{ overflow: "hidden" }}>
+    <div className="profile-container" style={{ overflowX: "hidden" }}>
     <Grid container>
-        <Grid item md={2}
+      <Grid item md={2}
           sx={{
             padding: 0,
-            margin:0
+            margin: 0
           }}
         >
         <SideBar className="slide1" />
@@ -34,11 +61,18 @@ const Profile = () => {
         </div>
         <div className="content-button">
           <div className="button-list">
-            <Button >Intro</Button>
-            <Button >Post</Button>
-            <Button >Follower</Button>
-            <Button >Following</Button>
-            <Button >Edit</Button>
+            <Button onClick={handleIntroClick}>Intro</Button>
+            <Button onClick={handlePostClick}>Post</Button>
+            <Button onClick={handleFollowerClick}>Follower <sup>(3)</sup></Button>
+            <Button onClick={handleFollowingClick}>Following <sup>(10)</sup></Button>
+            <Button onClick={handleEditClick}>Edit</Button>
+          </div>
+          <div className="show-content">
+            {displayComponent === "intro" && <IntroProfile />}
+            {displayComponent === "post" && <RecipeReviewCard />}
+            {displayComponent === "follower" && <FollowerProfile />}
+            {displayComponent === "following" && <FollowingProfile />}
+            {displayComponent === "edit" && <EditProfile />}
           </div>
         </div>
       </Grid>
