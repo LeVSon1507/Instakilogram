@@ -39,7 +39,8 @@ export default function RecipeReviewCard() {
   };
 
   return (
-    <Card sx={{ margin: 3 }}>
+    <div className="">
+      <Card sx={{ margin: 3 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -51,7 +52,7 @@ export default function RecipeReviewCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
+        title="Nghia Dep Trai"
         subheader="September 14, 2016"
       />
       <CardMedia
@@ -60,7 +61,7 @@ export default function RecipeReviewCard() {
         image="https://kynguyenlamdep.com/wp-content/uploads/2022/06/avatar-cute-meo-con-than-chet-700x695.jpg"
         alt="Paella dish"
         sx={{
-          height: 200,
+          height: 500,
           width: "auto"
         }}
       />
@@ -83,6 +84,53 @@ export default function RecipeReviewCard() {
           <ShareIcon />
         </IconButton>
       </CardActions>
-    </Card>
+      </Card>
+      <Card sx={{ margin: 3 }}>
+      <CardHeader
+        avatar={
+          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+            R
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title="Nghia Dep Trai"
+        subheader="September 14, 2016"
+      />
+      <CardMedia
+        component="img"
+        height="194"
+        image="https://kynguyenlamdep.com/wp-content/uploads/2022/06/avatar-cute-meo-con-than-chet-700x695.jpg"
+        alt="Paella dish"
+        sx={{
+          height: 500,
+          width: "auto"
+        }}
+      />
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          This impressive paella is a perfect party dish and a fun meal to cook
+          together with your guests. Add 1 cup of frozen peas along with the mussels,
+          if you like.
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton
+          aria-label="like"
+          onClick={handleLikeClick}
+          color={liked ? "error" : "default"}
+        > 10
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+      </CardActions>
+      </Card>
+      
+    </div>
   );
 }
