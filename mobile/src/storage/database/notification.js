@@ -1,0 +1,66 @@
+const notification = [
+  {
+    id: '1',
+    user: 'Nghia',
+    message: 'bắt đầu theo dõi bạn · 1g',
+    image: require('../images/ezgiceylan.jpeg'),
+    follow: true,
+  },
+  {
+    id: '2',
+    user: 'An',
+    message: 'bắt đầu theo dõi bạn · 2g',
+    image: require('../images/profil3.jpg'),
+    follow: true,
+  },
+  {
+    id: '3',
+    user: 'Son',
+    message: 'bắt đầu theo dõi bạn · 4g',
+    image: require('../images/profil4.jpg'),
+    follow: true,
+  },
+  {
+    id: '4',
+    user: 'Hieu',
+    message: 'bắt đầu theo dõi bạn · 1h',
+    image: require('../images/tag1.jpg'),
+    follow: true,
+  },
+  {
+    id: '5',
+    user: 'Tan',
+    message: 'bắt đầu theo dõi bạn · 1h',
+    image: require('../images/post.jpg'),
+    follow: true,
+  },
+  {
+    id: '6',
+    user: 'Batman',
+    message: 'bắt đầu theo dõi bạn · 1h',
+    image: require('../images/profil6.jpg'),
+    follow: true,
+  },
+  {
+    id: '7',
+    user: 'IronMan',
+    message: 'bắt đầu theo dõi bạn · 1h',
+    image: require('../images/tag1.jpg'),
+    follow: true,
+  },
+  {
+    id: '8',
+    user: 'photographer',
+    message: 'bắt đầu theo dõi bạn · 1h',
+    image: require('../images/reels.jpg'),
+    follow: true,
+  },
+  {
+    id: '9',
+    user: 'photographer2',
+    message: 'bắt đầu theo dõi bạn · 1h',
+    image: require('../random/image11.jpg'),
+    follow: true,
+  },
+];
+export default notification;
