@@ -1,0 +1,74 @@
+
+Tên miền localhost:8080, dưới đây là các URL API tương ứng với từng tài nguyên:
+
+Đăng ký người dùng:
+
+URL: http://localhost:8080/auth/register
+Phương thức: POST
+Đăng nhập người dùng:
+
+URL: http://localhost:8080/auth/login
+Phương thức: POST
+Lấy tất cả người dùng:
+
+URL: http://localhost:8080/users
+Phương thức: GET
+Lấy người dùng bằng ID:
+
+URL: http://localhost:8080/users/{userId}
+Phương thức: GET
+Ví dụ: http://localhost:8080/users/123
+Cập nhật thông tin người dùng:
+
+URL: http://localhost:8080/users/{userId}
+Phương thức: PUT
+Ví dụ: http://localhost:8080/users/123
+Thêm bạn bè cho người dùng:
+
+URL: http://localhost:8080/users/{userId}/friend/{friendId}
+Phương thức: PUT
+Ví dụ: http://localhost:8080/users/123/friend/456
+Lấy tất cả bài viết:
+
+URL: http://localhost:8080/posts
+Phương thức: GET
+Lấy bài viết của người dùng bằng ID:
+
+URL: http://localhost:8080/posts/{userId}
+Phương thức: GET
+Ví dụ: http://localhost:8080/posts/123
+Tạo bài viết cho người dùng:
+
+URL: http://localhost:8080/posts/{userId}
+Phương thức: POST
+Ví dụ: http://localhost:8080/posts/123
+Cập nhật bài viết của người dùng:
+
+URL: http://localhost:8080/posts/{userId}/{postId}
+Phương thức: PUT
+Ví dụ: http://localhost:8080/posts/123/456
+Xóa bài viết của người dùng:
+
+URL: http://localhost:8080/posts/{userId}/{postId}
+Phương thức: DELETE
+Ví dụ: http://localhost:8080/posts/123/456
+Thích bài viết của người dùng:
+
+URL: http://localhost:8080/posts/{userId}/like/{postId}
+Phương thức: PUT
+Ví dụ: http://localhost:8080/posts/123/like/456
+Thêm bình luận vào bài viết của người dùng:
+
+URL: http://localhost:8080/posts/{userId}/comment/{postId}
+Phương thức: PUT
+Ví dụ: http://localhost:8080/posts/123/comment/456
+Gửi tin nhắn cho người dùng:
+
+URL: http://localhost:8080/messages/{userId}
+Phương thức: POST
+Ví dụ: http://localhost:8080/messages/123
+Lấy tất cả tin nhắn trong cuộc trò chuyện:
+
+URL: http://localhost:8080/messages/{chatId}
+Phương thức: GET
+Ví dụ: http://localhost:8080/messages/456

@@ -28,6 +28,7 @@ const Login = ({ navigation }) => {
             email,
             password,
          });
+         console.log('🚀 ~ file: Login.js:31 ~ onLogin ~ data:', data);
          handleCheckLogin(data);
       } catch (error) {
          console.log(error);
