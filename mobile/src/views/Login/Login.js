@@ -9,42 +9,43 @@ import Register from '../Register/Register';
 
 import styles from './Login.styles';
 import {useNavigation} from '@react-navigation/native';
-
+import axios from 'axios';
 const trueEmail = 'E';
 const truePassword = '1';
 
 const Login = ({navigation}) => {
   const [passwordVisible, setPasswordVisible] = useState(true);
-  const [name, setName] = useState(null);
+  const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
-  
 
   const navigations = useNavigation();
   const handleNavigateToRegister = () => {
     navigations.navigate('Register');
   };
-  // const callApi = async () => {
-  //   try {
-  //     const data = await axios.post('http://localhost:3003/v1/user/login', {
-  //       name,
-  //       password,
-  //     });
-  //     handleCheckLogin(data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const onLogin = async () => {
+    try {
+      const data = await axios.post('http://10.0.2.2:8080/auth/login', {
+        email,
+        password,
+      });
+      console.log('🚀 ~ file: Login.js:31 ~ onLogin ~ data:', data);
+      handleCheckLogin(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  // const handleCheckLogin = data => {
-  //   if (data?.message === 'oke!') {
-  //     navigation.reset({
-  //       index: 0,
-  //       routes: [{name: 'BottomTab'}],
-  //     });
-  //   } else {
-  //     Alert.alert('Sai tên đăng nhập hoặc mật khẩu');
-  //   }
-  // };
+  const handleCheckLogin = data => {
+    console.log('🚀 ~ file: Login.js:39 ~ handleCheckLogin ~ data:', data);
+    if (data?.message === 'oke!') {
+      navigation.reset({
+        index: 0,
+        routes: [{email: 'BottomTab'}],
+      });
+    } else {
+      Alert.alert('Sai tên đăng nhập hoặc mật khẩu');
+    }
+  };
 
   return (
     <Container insets={{top: true, bottom: true}}>
@@ -70,7 +71,7 @@ const Login = ({navigation}) => {
             <TextInput
               theme={{colors: {text: 'white'}}}
               placeholder="Tên đăng nhập"
-              onChangeText={item => setName(item)}
+              onChangeText={item => setEmail(item)}
               placeholderTextColor="grey"
               selectionColor="grey"
               style={styles.textInput}
@@ -91,22 +92,26 @@ const Login = ({navigation}) => {
               right={
                 <TextInput.Icon
                   color={'grey'}
-                  name={passwordVisible ? 'eye-off' : 'eye'}
+                  email={passwordVisible ? 'eye-off' : 'eye'}
                   onPress={() => setPasswordVisible(!passwordVisible)}
                 />
               }
             />
-            <TouchableOpacity
+            {/* <TouchableOpacity
               onPress={() => {
-                trueEmail === name && truePassword === password
+                trueEmail === email && truePassword === password
                   ? navigation.reset({
                       index: 0,
-                      routes: [{name: 'BottomTab'}],
+                      routes: [{email: 'BottomTab'}],
                     })
                   : Alert.alert('Sai tên đăng nhập hoặc mật khẩu');
               }}
               style={styles.login}
-              disabled={name === null && password === null ? true : false}>
+              disabled={email === null && password === null ? true : false}> */}
+            <TouchableOpacity
+              onPress={() => onLogin()}
+              style={styles.login}
+              disabled={email === null && password === null ? true : false}>
               <Text style={styles.loginText}>Đăng Nhập</Text>
             </TouchableOpacity>
 
@@ -115,10 +120,7 @@ const Login = ({navigation}) => {
                 <Text style={{fontSize: 12, color: 'grey'}}>
                   Bạn chưa có Tài Khoản?{' '}
                 </Text>
-                <Text
-                  style={styles.help}
-                  onPress={handleNavigateToRegister}
-                >
+                <Text style={styles.help} onPress={handleNavigateToRegister}>
                   Tạo tài khoản mới.
                 </Text>
               </View>

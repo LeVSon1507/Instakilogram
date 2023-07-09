@@ -23,9 +23,7 @@ const Register = ({navigation}) => {
   const [confirmPassword, setConfirmPassword] = useState(null);
 
   const navigates = useNavigation();
-  const handleNavigateToLogin = () => {
-    navigates.navigate('Login');
-  };
+
   return (
     <Container insets={{top: true, bottom: true}}>
       <Content>

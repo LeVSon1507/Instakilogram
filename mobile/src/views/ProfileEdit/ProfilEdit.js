@@ -27,14 +27,14 @@ const ProfilEdit = () => {
   const bottomSheet = useRef();
 
   const chooseFromLibrary = () => {
-    ImagePicker.openPicker({
-      width: 100,
-      height: 100,
-      cropping: true,
-    }).then(images => {
-      setImage(images?.path);
-      bottomSheet.current.close();
-    });
+    // ImagePicker?.openPicker({
+    //   width: 100,
+    //   height: 100,
+    //   cropping: true,
+    // }).then(images => {
+    //   setImage(images?.path);
+    //   bottomSheet.current.close();
+    // });
   };
 
   return (

@@ -20,11 +20,11 @@ const userSchema = new mongoose.Schema(
   {
     instaName: {
       type: String,
-      required: true,
+      default: "",
     },
     userName: {
       type: String,
-      required: true,
+      default: "",
     },
     email: {
       type: String,
