@@ -135,8 +135,8 @@ const Profile = () => {
             display: 'flex',
             justifyContent: 'space-around',
             height: '4%',
-            background: 'white',
-            borderRadius: 3,
+            // background: 'white',
+            // borderRadius: 3,
           }}
         >
           {tabs.map((tab) => (
@@ -146,8 +146,18 @@ const Profile = () => {
                 fontSize: '15px',
                 fontWeight: 'bold',
                 width: '100%',
-                background: activeTab === tab.id ? 'rgba(46, 138, 216, 1)' : '',
+                border: 2,
+                borderRadius: 10,
+                backgroundColor: activeTab === tab.id ? 'rgba(46, 138, 216, 1)' : '',
                 color: activeTab === tab.id ? 'white' : '',
+                '&:hover': {
+                  backgroundColor: activeTab === tab.id ? 'rgba(46, 138, 216, 1)' : 'rgba(128, 128, 128, 0.2)',
+                  color: activeTab === tab.id ? 'white' : '',
+                },
+                '&:focus': {
+                  backgroundColor: activeTab === tab.id ? 'rgba(46, 138, 216, 1)' : 'rgba(128, 128, 128, 0.2)',
+                  color: activeTab === tab.id ? 'white' : '',
+                },
               }}
               onClick={() => handleTabClick(tab.id)}
             >

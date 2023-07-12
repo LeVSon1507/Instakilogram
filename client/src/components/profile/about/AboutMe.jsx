@@ -43,6 +43,18 @@ export const AboutMe = () => {
                 textAlign: 'start',
                 backgroundColor: activeComponent?.title === item.title ? 'rgba(46, 138, 216, 1)' : '',
                 color: activeComponent?.title === item.title ? 'white' : '',
+                '&:hover': {
+                  backgroundColor:
+                    activeComponent?.title === item.title ? 'rgba(46, 138, 216, 1)' : 'rgba(128, 128, 128, 0.2)',
+                  color: activeComponent?.title === item.title ? 'white' : '',
+                },
+                '&:focus': {
+                  backgroundColor:
+                    activeComponent?.title === item.title ? 'rgba(46, 138, 216, 1)' : 'rgba(128, 128, 128, 0.2)',
+                  color: activeComponent?.title === item.title ? 'white' : '',
+                },
+                // backgroundColor: activeComponent?.title === item.title ? 'rgba(46, 138, 216, 1)' : '',
+                // color: activeComponent?.title === item.title ? 'white' : '',
               }}
               onClick={() => handleClick(item)}
             >
