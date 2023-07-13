@@ -135,6 +135,7 @@ const Profile = () => {
             display: 'flex',
             justifyContent: 'space-around',
             height: '4%',
+            gap: 7
             // background: 'white',
             // borderRadius: 3,
           }}
@@ -148,7 +149,7 @@ const Profile = () => {
                 width: '100%',
                 border: 2,
                 borderRadius: 10,
-                backgroundColor: activeTab === tab.id ? 'rgba(46, 138, 216, 1)' : '',
+                backgroundColor: activeTab === tab.id ? 'rgba(46, 138, 216, 1)' : 'white',
                 color: activeTab === tab.id ? 'white' : '',
                 '&:hover': {
                   backgroundColor: activeTab === tab.id ? 'rgba(46, 138, 216, 1)' : 'rgba(128, 128, 128, 0.2)',
