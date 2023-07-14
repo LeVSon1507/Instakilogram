@@ -1,4 +1,4 @@
-import { Avatar, Box, Card, CardActionArea, CardContent, CardMedia, Grid, Input, TextField, Typography } from "@mui/material";
+import { Avatar, Box, Card, CardActionArea, CardContent, CardMedia, Grid, Input, TextField, ThemeProvider, Typography, createTheme } from "@mui/material";
 import SideBar from "../sidebar/SideBar";
 import "./Profile.scss";
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -13,6 +13,11 @@ import { PhotoProfile } from "./photos/PhotoProfile";
 import { Friends } from "./friends/Friends";
 import { useState } from "react";
 
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 const Profile = () => {
    const tabs = [
@@ -63,7 +68,7 @@ const Profile = () => {
         <Box
           sx={{
             width: '100%',
-            height: 'auto',
+            height: 'auto%',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -72,11 +77,22 @@ const Profile = () => {
           }}
         >
           <Avatar
+            src="https://scontent.fdad3-4.fna.fbcdn.net/v/t39.30808-6/278332607_1568939690143552_7512332174431310208_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=NGB85JteidUAX_Khup2&_nc_ht=scontent.fdad3-4.fna&oh=00_AfANd8pTIoGfd9qk_yrw7T0xTSk1RMOrzN82F0DIixBb1A&oe=64B4AF30"
+            sx={{
+              height: '100%',
+              width: '100%',
+              position: 'absolute',
+              top: -30,
+              borderRadius: 3,
+            }}
+          />
+          <Avatar
             src="https://scontent.fdad3-1.fna.fbcdn.net/v/t39.30808-6/340767734_531530315814851_7073978951600084146_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=FvSwnkjuY3kAX_ic4u1&_nc_ht=scontent.fdad3-1.fna&oh=00_AfCD4l-hZvH5JHeumLjwIL2lavb883KkeYonb2kUAbJcwA&oe=64ABDAD4"
             sx={{
               width: '30%',
               height: 'auto',
               display: 'block',
+              transform: 'translateY(30px)',
             }}
           />
           <Typography
@@ -85,7 +101,7 @@ const Profile = () => {
             sx={{
               width: '100%',
               position: 'absolute',
-              bottom: '-10%',
+              bottom: '-20%',
               left: '50%',
               transform: 'translateX(-50%)',
               textAlign: 'center',
@@ -135,9 +151,7 @@ const Profile = () => {
             display: 'flex',
             justifyContent: 'space-around',
             height: '4%',
-            gap: 7
-            // background: 'white',
-            // borderRadius: 3,
+            gap: 7,
           }}
         >
           {tabs.map((tab) => (

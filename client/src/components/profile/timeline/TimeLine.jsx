@@ -126,7 +126,8 @@ export const TimeLine = () => {
                     aria-label="delete"
                     sx={{
                       position: 'absolute',
-                      left: -10,
+                      bottom: 0,
+                      left: 0
                     }}
                     onClick={() => handleDeleteJobData(index)}
                   >
