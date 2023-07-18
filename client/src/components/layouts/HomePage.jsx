@@ -5,7 +5,7 @@ import InforPage from './inforpage/InforPage';
 import axios from 'axios';
 import { observer } from 'mobx-react';
 import accountStore from '../../store/accountStore';
-import PostList from './PostList';
+import PostList from './inforpage/PostList';
 import './HomePage.scss';
 import postItemStore from '../../store/postItemStore';
 import { useNavigate } from 'react-router-dom';

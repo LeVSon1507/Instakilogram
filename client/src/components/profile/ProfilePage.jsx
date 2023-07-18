@@ -13,11 +13,7 @@ import { PhotoProfile } from "./photos/PhotoProfile";
 import { Friends } from "./friends/Friends";
 import { useState } from "react";
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
-});
+
 
 const Profile = () => {
    const tabs = [
@@ -37,9 +33,10 @@ const Profile = () => {
     <Grid
       container
       sx={{
-        height: '200%',
+        height: '100%',
         width: '100%',
-        background: 'rgba(128, 128, 128, 0.2)',
+        background: 'rgba(000, 000, 000, 0.2)',
+        overflowX: 'hidden',
       }}
     >
       <Grid
@@ -47,7 +44,6 @@ const Profile = () => {
         md={2}
         sx={{
           height: 'auto',
-          width: '100%',
         }}
         className="sidebar-grid"
       >
@@ -55,20 +51,16 @@ const Profile = () => {
       </Grid>
       <Grid
         item
-        md={9}
+        md={10}
         className="slide2"
         sx={{
-          height: 'auto',
           width: '100%',
-          // background: "rgba(128, 128, 128, 0.2)"
         }}
-        justifyContent="center"
-        alignItems="center"
       >
         <Box
           sx={{
             width: '100%',
-            height: 'auto%',
+            height: '25%',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -81,34 +73,38 @@ const Profile = () => {
             sx={{
               height: '100%',
               width: '100%',
-              position: 'absolute',
-              top: -30,
-              borderRadius: 3,
+              borderRadius: 0,
             }}
           />
-          <Avatar
-            src="https://scontent.fdad3-1.fna.fbcdn.net/v/t39.30808-6/340767734_531530315814851_7073978951600084146_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=FvSwnkjuY3kAX_ic4u1&_nc_ht=scontent.fdad3-1.fna&oh=00_AfCD4l-hZvH5JHeumLjwIL2lavb883KkeYonb2kUAbJcwA&oe=64ABDAD4"
+          <Box
             sx={{
-              width: '30%',
-              height: 'auto',
-              display: 'block',
-              transform: 'translateY(30px)',
-            }}
-          />
-          <Typography
-            variant="h4"
-            component="h1"
-            sx={{
-              width: '100%',
               position: 'absolute',
-              bottom: '-20%',
+              bottom: -30,
               left: '50%',
               transform: 'translateX(-50%)',
-              textAlign: 'center',
             }}
           >
-            Nguyễn Đức Nghĩa{' '}
-          </Typography>
+            <Avatar
+              src="https://scontent.fdad3-1.fna.fbcdn.net/v/t39.30808-6/340767734_531530315814851_7073978951600084146_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=FvSwnkjuY3kAX_ic4u1&_nc_ht=scontent.fdad3-1.fna&oh=00_AfCD4l-hZvH5JHeumLjwIL2lavb883KkeYonb2kUAbJcwA&oe=64ABDAD4"
+              sx={{
+                width: 250,
+                height: 250,
+              }}
+            />
+            <Box
+              sx={{
+                position: 'absolute',
+                bottom: -50,
+                left: '50%',
+                width: '100%',
+                transform: 'translateX(-50%)',
+              }}
+            >
+              <Typography variant="h5" component="h1" textAlign='center'>
+                Nguyễn Đức Nghĩa
+              </Typography>
+            </Box>
+          </Box>
         </Box>
         <Box
           sx={{
@@ -123,42 +119,44 @@ const Profile = () => {
             sx={{
               display: 'flex',
               gap: 10,
+              marginLeft: 3,
             }}
           >
-            <FacebookIcon fontSize="large" />
-            <InstagramIcon fontSize="large" />
-            <TwitterIcon fontSize="large" />
+            <FacebookIcon fontSize="medium" />
+            <InstagramIcon fontSize="medium" />
+            <TwitterIcon fontSize="medium" />
           </Box>
           <Box
             sx={{
               display: 'flex',
               gap: 10,
+              marginRight: 3,
             }}
           >
-            <h3>
+            <h5>
               Post <br /> 56
-            </h3>
-            <h3>
+            </h5>
+            <h5>
               Follower <br /> 32
-            </h3>
-            <h3>
+            </h5>
+            <h5>
               Following <br /> 2.000.000
-            </h3>
+            </h5>
           </Box>
         </Box>
         <Box
           sx={{
             display: 'flex',
             justifyContent: 'space-around',
-            height: '4%',
-            gap: 7,
+            height: '3%',
+            gap: 13,
           }}
         >
           {tabs.map((tab) => (
             <Button
               key={tab.id}
               sx={{
-                fontSize: '15px',
+                fontSize: '10px',
                 fontWeight: 'bold',
                 width: '100%',
                 border: 2,

@@ -18,11 +18,11 @@ import { RiEmotionLine, RiEmotionLaughLine } from 'react-icons/ri';
 import { HiDotsHorizontal } from 'react-icons/hi';
 import { TbLivePhoto } from 'react-icons/tb';
 import { FcAddImage } from 'react-icons/fc';
-import DialogSetting from './dialog/DialogSetting';
+import DialogSetting from '../dialog/DialogSetting';
 import { observer } from 'mobx-react';
-import accountStore from '../../store/accountStore';
-import PostDialog from './dialog/PostDialog';
-import { formatAccount } from '../utils/utils';
+import accountStore from '../../../store/accountStore';
+import PostDialog from '../dialog/PostDialog';
+import { formatAccount } from '../../utils/utils';
 
 const PostList = observer(
   ({ postAlls, handleLike, userId, content, setContent, handleComment }) => {

@@ -13,7 +13,7 @@ import {
   Typography,
 } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import PostList from '../../layouts/PostList';
+import Add from '../../home/add/Add';
 import CenterDialog from './centerdialog/CenterDialog';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -76,15 +76,19 @@ export const TimeLine = () => {
 
   return (
     <Box>
-      <CenterDialog open={openDialog}
+      <CenterDialog
+        open={openDialog}
         onClose={handleCloseDialog}
         onSave={handleSaveJobData}
         inputData={inputData}
-        handleInputChange={handleInputChange} />
+        handleInputChange={handleInputChange}
+      />
       <Grid
         container
         sx={{
           marginTop: 3,
+          padding: 3,
+          borderRadius: 3,
         }}
       >
         <Grid container>
@@ -106,13 +110,14 @@ export const TimeLine = () => {
                   marginY: 3,
                 }}
               >
-                <Typography variant="h5" sx={{ margin: 0, whiteSpace: 'nowrap' }}>
+                <Typography variant="h8" sx={{ margin: 0, whiteSpace: 'nowrap' }}>
                   Life Event
                 </Typography>
                 <Box sx={{ flex: 1 }} />
                 <Button
                   sx={{
                     width: '40%',
+                    fontSize: '13px',
                   }}
                   onClick={handleOpenDialog}
                 >
@@ -121,13 +126,19 @@ export const TimeLine = () => {
               </Box>
 
               {jobDataList.map((jobData, index) => (
-                <Box key={index} position="relative">
+                <Box
+                  key={index}
+                  position="relative"
+                  sx={{
+                    borderBottom: 1,
+                  }}
+                >
                   <IconButton
                     aria-label="delete"
                     sx={{
                       position: 'absolute',
                       bottom: 0,
-                      left: 0
+                      left: 0,
                     }}
                     onClick={() => handleDeleteJobData(index)}
                   >
@@ -147,7 +158,11 @@ export const TimeLine = () => {
                   <Typography variant="h5" color="initial" sx={{ textAlign: 'center' }}>
                     {jobData.title}
                   </Typography>
-                  <Typography variant="body2" color="initial" sx={{ textAlign: 'center', fontSize: 16 }}>
+                  <Typography
+                    variant="body2"
+                    color="initial"
+                    sx={{ textAlign: 'center', fontSize: 14, marginBottom: 3 }}
+                  >
                     {jobData.date}
                   </Typography>
                   <Dialog open={deleteConfirmation} onClose={handleCancelDelete}>
@@ -181,10 +196,11 @@ export const TimeLine = () => {
                   justifyContent: 'flex-start',
                   alignItems: 'flex-start',
                   gap: '10px',
+                  width: '100%',
                 }}
               >
                 <Typography
-                  variant="h5"
+                  variant="h8"
                   sx={{ margin: 0, whiteSpace: 'nowrap', borderBottom: '1px solid rgba(0, 0, 0, 0.2)', width: '100%' }}
                 >
                   Photos
@@ -208,7 +224,7 @@ export const TimeLine = () => {
                     <Avatar
                       src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/299851551_1654830928221094_6493440420507434262_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=0GOhBEvnoKQAX_L3saN&_nc_ht=scontent.fdad1-3.fna&oh=00_AfDpCqlxJuUpzJE0nPc_na-uOzitpS0ultVgmCePRtIGug&oe=64AC1C5E"
                       sx={{
-                        width: 100,
+                        width: 80,
                         height: 'auto',
                         borderRadius: 0,
                       }}
@@ -224,7 +240,7 @@ export const TimeLine = () => {
                     <Avatar
                       src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/299851551_1654830928221094_6493440420507434262_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=0GOhBEvnoKQAX_L3saN&_nc_ht=scontent.fdad1-3.fna&oh=00_AfDpCqlxJuUpzJE0nPc_na-uOzitpS0ultVgmCePRtIGug&oe=64AC1C5E"
                       sx={{
-                        width: 100,
+                        width: 80,
                         height: 'auto',
                         borderRadius: 0,
                       }}
@@ -240,7 +256,7 @@ export const TimeLine = () => {
                     <Avatar
                       src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/299851551_1654830928221094_6493440420507434262_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=0GOhBEvnoKQAX_L3saN&_nc_ht=scontent.fdad1-3.fna&oh=00_AfDpCqlxJuUpzJE0nPc_na-uOzitpS0ultVgmCePRtIGug&oe=64AC1C5E"
                       sx={{
-                        width: 100,
+                        width: 80,
                         height: 'auto',
                         borderRadius: 0,
                       }}
@@ -256,7 +272,7 @@ export const TimeLine = () => {
                     <Avatar
                       src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/299851551_1654830928221094_6493440420507434262_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=0GOhBEvnoKQAX_L3saN&_nc_ht=scontent.fdad1-3.fna&oh=00_AfDpCqlxJuUpzJE0nPc_na-uOzitpS0ultVgmCePRtIGug&oe=64AC1C5E"
                       sx={{
-                        width: 100,
+                        width: 80,
                         height: 'auto',
                         borderRadius: 0,
                       }}
@@ -272,7 +288,7 @@ export const TimeLine = () => {
                     <Avatar
                       src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/299851551_1654830928221094_6493440420507434262_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=0GOhBEvnoKQAX_L3saN&_nc_ht=scontent.fdad1-3.fna&oh=00_AfDpCqlxJuUpzJE0nPc_na-uOzitpS0ultVgmCePRtIGug&oe=64AC1C5E"
                       sx={{
-                        width: 100,
+                        width: 80,
                         height: 'auto',
                         borderRadius: 0,
                       }}
@@ -297,10 +313,11 @@ export const TimeLine = () => {
                   justifyContent: 'flex-start',
                   alignItems: 'flex-start',
                   gap: '10px',
+                  width: '100%',
                 }}
               >
                 <Typography
-                  variant="h5"
+                  variant="h8"
                   sx={{ margin: 0, whiteSpace: 'nowrap', borderBottom: '1px solid rgba(0, 0, 0, 0.2)', width: '100%' }}
                 >
                   Friends
@@ -310,107 +327,146 @@ export const TimeLine = () => {
                     display: 'flex',
                     flexDirection: 'row',
                     flexWrap: 'wrap',
-                    gap: '10px',
-                    alignItems: 'start',
-                    justifyContent: 'start',
+                    gap: '12px',
+                    alignItems: 'center',
                   }}
                 >
                   <Box
                     sx={{
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '10px',
                       alignItems: 'center',
+                      width: '30%',
                     }}
                   >
                     <Avatar
                       src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/299851551_1654830928221094_6493440420507434262_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=0GOhBEvnoKQAX_L3saN&_nc_ht=scontent.fdad1-3.fna&oh=00_AfDpCqlxJuUpzJE0nPc_na-uOzitpS0ultVgmCePRtIGug&oe=64AC1C5E"
                       sx={{
-                        width: 100,
+                        width: 80,
                         height: 'auto',
                         borderRadius: 0,
                       }}
                     />
-                    <p className="name-friends">Trần Thị Nhộng</p>
+                    <Typography
+                      color="initial"
+                      sx={{
+                        fontSize: 'smaller',
+                        textAlign: 'center',
+                      }}
+                    >
+                      Trần Văn Nhộng
+                    </Typography>
                   </Box>
                   <Box
                     sx={{
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '10px',
                       alignItems: 'center',
+                      width: '30%',
                     }}
                   >
                     <Avatar
                       src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/299851551_1654830928221094_6493440420507434262_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=0GOhBEvnoKQAX_L3saN&_nc_ht=scontent.fdad1-3.fna&oh=00_AfDpCqlxJuUpzJE0nPc_na-uOzitpS0ultVgmCePRtIGug&oe=64AC1C5E"
                       sx={{
-                        width: 100,
+                        width: 80,
                         height: 'auto',
                         borderRadius: 0,
                       }}
                     />
-                    <p className="name-friends">Văn Thị Thu </p>
+                    <Typography
+                      color="initial"
+                      sx={{
+                        fontSize: 'smaller',
+                        textAlign: 'center',
+                      }}
+                    >
+                      Trần Văn Nhộng
+                    </Typography>
                   </Box>
                   <Box
                     sx={{
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '10px',
                       alignItems: 'center',
+                      width: '30%',
                     }}
                   >
                     <Avatar
                       src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/299851551_1654830928221094_6493440420507434262_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=0GOhBEvnoKQAX_L3saN&_nc_ht=scontent.fdad1-3.fna&oh=00_AfDpCqlxJuUpzJE0nPc_na-uOzitpS0ultVgmCePRtIGug&oe=64AC1C5E"
                       sx={{
-                        width: 100,
+                        width: 80,
                         height: 'auto',
                         borderRadius: 0,
                       }}
                     />
-                    <p className="name-friends">Trần Thị Bách </p>
+                    <Typography
+                      color="initial"
+                      sx={{
+                        fontSize: 'smaller',
+                        textAlign: 'center',
+                      }}
+                    >
+                      Trần Văn Nhộng
+                    </Typography>
                   </Box>
                   <Box
                     sx={{
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '10px',
                       alignItems: 'center',
+                      width: '30%',
                     }}
                   >
                     <Avatar
                       src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/299851551_1654830928221094_6493440420507434262_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=0GOhBEvnoKQAX_L3saN&_nc_ht=scontent.fdad1-3.fna&oh=00_AfDpCqlxJuUpzJE0nPc_na-uOzitpS0ultVgmCePRtIGug&oe=64AC1C5E"
                       sx={{
-                        width: 100,
+                        width: 80,
                         height: 'auto',
                         borderRadius: 0,
                       }}
                     />
-                    <p className="name-friends">Lưu Manh Ghê</p>
+                    <Typography
+                      color="initial"
+                      sx={{
+                        fontSize: 'smaller',
+                        textAlign: 'center',
+                      }}
+                    >
+                      Trần Văn Nhộng
+                    </Typography>
                   </Box>
                   <Box
                     sx={{
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '10px',
                       alignItems: 'center',
+                      width: '30%',
                     }}
                   >
                     <Avatar
                       src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/299851551_1654830928221094_6493440420507434262_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=0GOhBEvnoKQAX_L3saN&_nc_ht=scontent.fdad1-3.fna&oh=00_AfDpCqlxJuUpzJE0nPc_na-uOzitpS0ultVgmCePRtIGug&oe=64AC1C5E"
                       sx={{
-                        width: 100,
+                        width: 80,
                         height: 'auto',
                         borderRadius: 0,
                       }}
                     />
-                    <p className="name-friends">Trần Văn C</p>
+                    <Typography
+                      color="initial"
+                      sx={{
+                        fontSize: 'smaller',
+                        textAlign: 'center',
+                      }}
+                    >
+                      Trần Văn Nhộng
+                    </Typography>
                   </Box>
                 </Box>
               </Box>
             </Grid>
           </Grid>
-          <Grid item md={9}>
-            <PostList />
+          <Grid item md={10}>
+            <Add />
           </Grid>
         </Grid>
       </Grid>

@@ -16,7 +16,7 @@ function Homes() {
   })
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box bgcolor={"background.default"} color={"text.primary"}>
+      <Box  >
         <Navbar />
         <Stack direction="row" spacing={2} justifyContent="space-between">
           <InforBar setMode={setMode} mode={mode}/>

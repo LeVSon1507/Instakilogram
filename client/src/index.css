@@ -20,3 +20,6 @@ body,
   --color-white: #ffff;
   --main-color: #7269ef;
 }
+body {
+  overflow: hidden;
+}

@@ -40,11 +40,11 @@ import {
       <>
         <Tooltip
           onClick={(e) => setOpen(true)}
-          title="Delete"
+          title="add"
           sx={{
-            position: "fixed",
+            position: 'fixed',
             bottom: 20,
-            left: { xs: "calc(50% - 25px)", md: 30 },
+            left: { xs: 'calc(50% - 25px)', md: 30 },
           }}
         >
           <Fab color="primary" aria-label="add">
@@ -60,11 +60,10 @@ import {
           <Box
             width={400}
             height={280}
-            bgcolor={"background.default"}
-            color={"text.primary"}
+            bgcolor={'#FFFFFF'}
+            color={'text.primary'}
             p={3}
-            borderRadius={5}
-          >
+            borderRadius={5}>
             <Typography variant="h6" color="gray" textAlign="center">
               Create post
             </Typography>
@@ -78,7 +77,7 @@ import {
               </Typography>
             </UserBox>
             <TextField
-              sx={{ width: "100%" }}
+              sx={{ width: '100%' }}
               id="standard-multiline-static"
               multiline
               rows={3}
@@ -91,13 +90,9 @@ import {
               <VideoCameraBack color="success" />
               <PersonAdd color="error" />
             </Stack>
-            <ButtonGroup
-              fullWidth
-              variant="contained"
-              aria-label="outlined primary button group"
-            >
+            <ButtonGroup fullWidth variant="contained" aria-label="outlined primary button group">
               <Button>Post</Button>
-              <Button sx={{ width: "100px" }}>
+              <Button sx={{ width: '100px' }}>
                 <DateRange />
               </Button>
             </ButtonGroup>
