@@ -18,7 +18,9 @@ export const PhotoProfile = () => {
   const commentCount = 5; // Số lượt bình luận
 
   return (
-    <Box>
+    <Box sx={{
+      marginTop: 3
+    }}>
       <h1>Photos</h1>
       <Box
         sx={{

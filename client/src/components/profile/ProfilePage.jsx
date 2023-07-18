@@ -55,12 +55,13 @@ const Profile = () => {
         className="slide2"
         sx={{
           width: '100%',
+          height: '100%'
         }}
       >
         <Box
           sx={{
             width: '100%',
-            height: '25%',
+            height: '50%',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -148,7 +149,7 @@ const Profile = () => {
           sx={{
             display: 'flex',
             justifyContent: 'space-around',
-            height: '3%',
+            height: '6%',
             gap: 13,
           }}
         >
