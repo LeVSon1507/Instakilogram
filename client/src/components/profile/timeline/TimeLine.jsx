@@ -87,7 +87,6 @@ export const TimeLine = () => {
         container
         sx={{
           marginTop: 3,
-          padding: 3,
           borderRadius: 3,
         }}
       >
