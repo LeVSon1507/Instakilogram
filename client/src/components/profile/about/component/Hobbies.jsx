@@ -1,5 +1,6 @@
-import { Grid } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
+import { Grid, Button, TextField } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
 
 export const Hobbies = () => {
   const data = [
@@ -26,9 +27,38 @@ export const Hobbies = () => {
     },
     {
       title: 'Favourite Books:',
-      value: 'The Crime of the Century, Egiptian Mythology 101, The Scarred Wizard, Lord of the Wings, Amongst Gods, The Oracle, A Tale of Air and Water.',
+      value:
+        'The Crime of the Century, Egiptian Mythology 101, The Scarred Wizard, Lord of the Wings, Amongst Gods, The Oracle, A Tale of Air and Water.',
     },
   ];
+
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedValues, setEditedValues] = useState(data.map((item) => item.value));
+  const [editIndex, setEditIndex] = useState(null);
+
+  const handleEditClick = (index) => {
+    setIsEditing(true);
+    setEditIndex(index);
+    const newEditedValues = [...editedValues];
+    newEditedValues[index] = data[index].value;
+    setEditedValues(newEditedValues);
+  };
+
+  const handleInputChange = (e, index) => {
+    const newEditedValues = [...editedValues];
+    newEditedValues[index] = e.target.value;
+    setEditedValues(newEditedValues);
+  };
+
+  const handleSaveClick = () => {
+    setIsEditing(false);
+    const updatedData = [...data];
+    updatedData[editIndex].value = editedValues[editIndex];
+  };
+
+  const handleCancelClick = () => {
+    setIsEditing(false);
+  };
 
   return (
     <Grid container>
@@ -42,10 +72,39 @@ export const Hobbies = () => {
       >
         Hobbies and Interests
       </Grid>
-      {data.map((item) => (
-        <Grid container gap={1} sx={{ fontSize: 20, marginTop: 3 }}>
-          <Grid>{item.title}</Grid>
-          <Grid>{item.value}</Grid> 
+      {data.map((item, index) => (
+        <Grid container gap={1} sx={{ fontSize: 20, marginTop: 3, position: 'relative' }}>
+          {isEditing && index === editIndex ? (
+            <React.Fragment key={index}>
+              <Grid>{item.title}</Grid>
+              <Grid md={12}>
+                <TextField
+                  value={editedValues[index]}
+                  onChange={(e) => handleInputChange(e, index)}
+                  multiline
+                  fullWidth
+                />
+              </Grid>
+              <Button variant="text" onClick={handleSaveClick} sx={{ position: 'absolute', right: 0, top: -6 }}>
+                Save
+              </Button>
+              <Button variant="text" onClick={handleCancelClick} sx={{ position: 'absolute', right: 50, top: -6 }}>
+                Cancel
+              </Button>
+            </React.Fragment>
+          ) : (
+            <React.Fragment key={index}>
+              <Grid>{item.title}</Grid>
+              <Grid md={12}>{item.value}</Grid>
+              <Button
+                variant="text"
+                onClick={() => handleEditClick(index)}
+                sx={{ position: 'absolute', right: 0, top: -6 }}
+              >
+                <EditIcon />
+              </Button>
+            </React.Fragment>
+          )}
         </Grid>
       ))}
     </Grid>
