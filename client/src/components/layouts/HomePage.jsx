@@ -18,22 +18,11 @@ const HomePage = observer(() => {
 
   useEffect(() => {
     const accessToken = sessionStorage.getItem('accessToken');
-  
+
     axios
-      .get(`http://localhost:8080/posts`,{
-        headers: { Authorization: `Bearer ${accessToken}` }
-      })
-      .then((res) => {
-        const sortedPosts = res.data.sort((a, b) => {
-          const dateA = new Date(a.updatedAt);
-          const dateB = new Date(b.updatedAt);
-          return dateB - dateA;
-        });
-        postItemStore.setPostItem(sortedPosts);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      .get(`http://localhost:8080/posts`, { headers: { Authorization: `Bearer ${accessToken}` } })
+      .then((res) => postItemStore.setPostItem(res.data.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))))
+      .catch((err) => console.log(err));
   }, []);
 
   const handleLike = (postId) => {
@@ -41,83 +30,48 @@ const HomePage = observer(() => {
       axios
         .put(`http://localhost:8080/posts/${userId}/like/${postId}`)
         .then(() => {
-          const index = postItemStore?.postItem?.findIndex(
-            (post) => post?._id === postId
-          );
-          if (index >= 0) {
-            postItemStore.updateLike(index, userId);
-          }
+          const index = postItemStore?.postItem?.findIndex((post) => post?._id === postId);
+          if (index >= 0) postItemStore.updateLike(index, userId);
         })
-        .catch((err) => {
-          console.log(err);
-        });
+        .catch((err) => console.log(err));
     }
   };
+
   const handleComment = async (postId) => {
     if (userId !== undefined) {
-      await axios
-        .put(`http://localhost:8080/posts/${userId}/comment/${postId}`, {
-          content,
-        })
-        .then(() => {
-          const index = postItemStore?.postItem?.findIndex(
-            (post) => post?._id === postId
+      try {
+        await axios.put(`http://localhost:8080/posts/${userId}/comment/${postId}`, { content });
+        const index = postItemStore?.postItem?.findIndex((post) => post?._id === postId);
+        if (index >= 0)
+          postItemStore.updateComment(
+            index,
+            userId,
+            content,
+            accountStore.account?.instaName,
+            accountStore.account?.avatar,
+            accountStore.account?.userName,
           );
-          if (index >= 0) {
-            postItemStore.updateComment(
-              index,
-              userId,
-              content,
-              accountStore.account?.instaName,
-              accountStore.account?.avatar,
-              accountStore.account?.userName
-            );
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-      setContent('');
+        setContent('');
+      } catch (err) {
+        console.log(err);
+      }
     } else {
       toast.warning('Vui lòng đăng nhập');
-      setTimeout(() => {
-        navigate('/');
-      }, 2000);
+      setTimeout(() => navigate('/'), 2000);
     }
   };
 
   return (
     <div>
       <ToastContainer />
-      <Grid
-        container
-        spacing={2}
-        className="home-container"
-      >
-        <Grid
-          item
-          md={2}
-          className="sidebar-grid"
-        >
+      <Grid container spacing={2} className="home-container">
+        <Grid item md={2} className="sidebar-grid">
           <SideBar />
         </Grid>
-        <Grid
-          item
-          md={10}
-          className="inforpost-layout"
-        >
-          <Grid
-            container
-            spacing={2}
-          >
-            <Grid
-              item
-              md={8}
-            >
-              <Grid
-                container
-                spacing={2}
-              >
+        <Grid item md={10} className="inforpost-layout">
+          <Grid container spacing={2}>
+            <Grid item md={8}>
+              <Grid container spacing={2}>
                 <PostList
                   postAlls={postItemStore.postItem}
                   handleLike={handleLike}
@@ -128,10 +82,7 @@ const HomePage = observer(() => {
                 />
               </Grid>
             </Grid>
-            <Grid
-              item
-              md={4}
-            >
+            <Grid item md={4}>
               <InforPage />
             </Grid>
           </Grid>
