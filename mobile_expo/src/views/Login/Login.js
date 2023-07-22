@@ -10,8 +10,8 @@ import Register from '../Register/Register';
 import styles from './Login.styles';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
-const trueEmail = 'E';
-const truePassword = '1';
+const trueEmail = 'team@fpt.edu.vn';
+const truePassword = '123123';
 
 const Login = ({ navigation }) => {
    const [passwordVisible, setPasswordVisible] = useState(true);
@@ -20,27 +20,23 @@ const Login = ({ navigation }) => {
 
    const navigations = useNavigation();
    const handleNavigateToRegister = () => {
-      // navigations.navigate('Register');
+      navigations.navigate('Register');
    };
-   const onLogin = async () => {
-      try {
-         const data = await axios.post('http://10.0.2.2:8080/auth/login', {
-            email,
-            password,
-         });
-         console.log('🚀 ~ file: Login.js:31 ~ onLogin ~ data:', data);
-         handleCheckLogin(data);
-      } catch (error) {
-         console.log(error);
-      }
-   };
+   // const onLogin = async () => {
+   //    try {
+   //       const data = await axios.post('http://10.0.2.2:8080/auth/login', {
+   //          email,
+   //          password,
+   //       });
+   //       handleCheckLogin(data);
+   //    } catch (error) {
+   //       console.log(error);
+   //    }
+   // };
 
    const handleCheckLogin = data => {
-      if (data?.message === 'oke!') {
-         navigation.reset({
-            index: 0,
-            routes: [{ email: 'BottomTab' }],
-         });
+      if (password === truePassword && email === trueEmail) {
+         navigation.navigate('BottomTab');
       } else {
          Alert.alert('Sai tên đăng nhập hoặc mật khẩu');
       }
@@ -60,10 +56,7 @@ const Login = ({ navigation }) => {
                         style={{ width: 12, height: 12 }}
                      />
                   </View>
-                  <Image
-                     style={styles.logo}
-                     source={require('../../../assets/images/instagram_text_logo.png')}
-                  />
+                  <Text style={styles.logo}>Instakilogram</Text>
                </View>
 
                <View style={styles.keyboardView}>
@@ -108,7 +101,7 @@ const Login = ({ navigation }) => {
               style={styles.login}
               disabled={email === null && password === null ? true : false}> */}
                   <TouchableOpacity
-                     onPress={() => onLogin()}
+                     onPress={() => handleCheckLogin()}
                      style={styles.login}
                      disabled={email === null && password === null ? true : false}
                   >

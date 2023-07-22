@@ -30,10 +30,7 @@ const Register = ({ navigation }) => {
                         style={{ width: 12, height: 12 }}
                      />
                   </View>
-                  <Image
-                     style={styles.logo}
-                     source={require('../../../assets/images/instagram_text_logo.png')}
-                  />
+                  <Text style={styles.logo}>Instakilogram</Text>
                </View>
 
                <View style={styles.keyboardView}>

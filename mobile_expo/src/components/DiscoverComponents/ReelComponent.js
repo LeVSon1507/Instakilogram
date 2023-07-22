@@ -21,31 +21,32 @@ const Reel = ({item}) => {
     Dimensions.get('window').height - bottomTabBarHeight - insets.top;
 
   return (
-    <View
-      style={{
-        height: height,
-        justifyContent: 'flex-end',
-      }}>
-      <Video
-        videoRef={ref}
-        source={item.video}
-        resizeMode="cover"
-        repeat={true}
-        style={{...styles.video, height: height}}
-        muted={true}
-      />
-
-      <View
+     <View
         style={{
-          zIndex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          paddingBottom: 10,
-        }}>
-        <Left item={item} />
-        <Right item={item} />
-      </View>
-    </View>
+           height: height,
+           justifyContent: 'flex-end',
+        }}
+     >
+        {/* <Video
+          videoRef={ref}
+          source={item.video}
+          resizeMode="cover"
+          repeat={true}
+          style={{...styles.video, height: height}}
+          muted={true}
+        /> */}
+        <View
+           style={{
+              zIndex: 1,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              paddingBottom: 10,
+           }}
+        >
+           <Left item={item} />
+           <Right item={item} />
+        </View>
+     </View>
   );
 };
 const Right = ({item}) => {

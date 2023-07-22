@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StatusBar, TouchableOpacity, View } from 'react-native';
+import { Image, StatusBar, Text, TouchableOpacity, View } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
@@ -16,10 +16,7 @@ const TopBar = () => {
          <StatusBar backgroundColor='black' />
 
          <View style={styles.logoContainer}>
-            <Image
-               source={require('../../../assets/images/instagram_text_logo.png')}
-               style={styles.icon}
-            />
+            <Text style={styles.icon}>Instakilogram</Text>
          </View>
 
          <View style={styles.iconContainer}>
